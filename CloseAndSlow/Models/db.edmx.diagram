@@ -9,16 +9,15 @@
         <EntityTypeShape EntityType="CLOSEANDSLOWModel.habitacion" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
         <EntityTypeShape EntityType="CLOSEANDSLOWModel.hotel" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
         <EntityTypeShape EntityType="CLOSEANDSLOWModel.reserva" Width="1.5" PointX="6" PointY="4.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="CLOSEANDSLOWModel.servicios" Width="1.5" PointX="8.25" PointY="5" IsExpanded="true" />
         <EntityTypeShape EntityType="CLOSEANDSLOWModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
         <AssociationConnector Association="CLOSEANDSLOWModel.FK_reserva_cliente" ManuallyRouted="false" />
         <AssociationConnector Association="CLOSEANDSLOWModel.FK_habitacion_hotel" ManuallyRouted="false" />
         <AssociationConnector Association="CLOSEANDSLOWModel.FK_reserva_habitacion" ManuallyRouted="false" />
         <AssociationConnector Association="CLOSEANDSLOWModel.FK_reserva_hotel" ManuallyRouted="false" />
-        <AssociationConnector Association="CLOSEANDSLOWModel.FK_servicios_servicios" ManuallyRouted="false" />
-        <AssociationConnector Association="CLOSEANDSLOWModel.hotel_servicios" ManuallyRouted="false" />
-        <AssociationConnector Association="CLOSEANDSLOWModel.reserva_servicios" ManuallyRouted="false" />
-      </Diagram>
+        <EntityTypeShape EntityType="CLOSEANDSLOWModel.servicios" Width="1.5" PointX="8.25" PointY="5.25" />
+        <AssociationConnector Association="CLOSEANDSLOWModel.hotel_servicios" />
+        <AssociationConnector Association="CLOSEANDSLOWModel.reserva_servicios" />
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="CLOSEANDSLOWModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="CLOSEANDSLOWModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="cliente">
           <Key>
             <PropertyRef Name="id_cliente" />
@@ -184,18 +184,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_servicios_servicios">
-          <End Role="servicios" Type="Self.servicios" Multiplicity="1" />
-          <End Role="servicios1" Type="Self.servicios" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="servicios">
-              <PropertyRef Name="id_servicio" />
-            </Principal>
-            <Dependent Role="servicios1">
-              <PropertyRef Name="id_servicio" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="CLOSEANDSLOWModelStoreContainer">
           <EntitySet Name="cliente" EntityType="Self.cliente" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="habitacion" EntityType="Self.habitacion" Schema="dbo" store:Type="Tables" />
@@ -237,13 +225,8 @@
             <End Role="servicios" EntitySet="servicios" />
             <End Role="reserva_servicios" EntitySet="reserva_servicios" />
           </AssociationSet>
-          <AssociationSet Name="FK_servicios_servicios" Association="Self.FK_servicios_servicios">
-            <End Role="servicios" EntitySet="servicios" />
-            <End Role="servicios1" EntitySet="servicios" />
-          </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="CLOSEANDSLOWModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -286,7 +269,7 @@
           <NavigationProperty Name="habitacion" Relationship="Self.FK_habitacion_hotel" FromRole="hotel" ToRole="habitacion" />
           <NavigationProperty Name="reserva" Relationship="Self.FK_reserva_habitacion" FromRole="hotel" ToRole="reserva" />
           <NavigationProperty Name="reserva1" Relationship="Self.FK_reserva_hotel" FromRole="hotel" ToRole="reserva" />
-          <NavigationProperty Name="servicios1" Relationship="Self.hotel_servicios" FromRole="hotel" ToRole="servicios" />
+          <NavigationProperty Name="servicios1" Relationship="CLOSEANDSLOWModel.hotel_servicios" FromRole="hotel" ToRole="servicios" />
         </EntityType>
         <EntityType Name="reserva">
           <Key>
@@ -305,19 +288,7 @@
           <NavigationProperty Name="cliente" Relationship="Self.FK_reserva_cliente" FromRole="reserva" ToRole="cliente" />
           <NavigationProperty Name="hotel" Relationship="Self.FK_reserva_habitacion" FromRole="reserva" ToRole="hotel" />
           <NavigationProperty Name="hotel1" Relationship="Self.FK_reserva_hotel" FromRole="reserva" ToRole="hotel" />
-          <NavigationProperty Name="servicios" Relationship="Self.reserva_servicios" FromRole="reserva" ToRole="servicios" />
-        </EntityType>
-        <EntityType Name="servicios">
-          <Key>
-            <PropertyRef Name="id_servicio" />
-          </Key>
-          <Property Name="id_servicio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nombre_servicio" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="precio" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
-          <NavigationProperty Name="servicios1" Relationship="Self.FK_servicios_servicios" FromRole="servicios" ToRole="servicios1" />
-          <NavigationProperty Name="servicios2" Relationship="Self.FK_servicios_servicios" FromRole="servicios1" ToRole="servicios" />
-          <NavigationProperty Name="hotel" Relationship="Self.hotel_servicios" FromRole="servicios" ToRole="hotel" />
-          <NavigationProperty Name="reserva" Relationship="Self.reserva_servicios" FromRole="servicios" ToRole="reserva" />
+          <NavigationProperty Name="servicios" Relationship="CLOSEANDSLOWModel.reserva_servicios" FromRole="reserva" ToRole="servicios" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -377,32 +348,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_servicios_servicios">
-          <End Role="servicios" Type="Self.servicios" Multiplicity="1" />
-          <End Role="servicios1" Type="Self.servicios" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="servicios">
-              <PropertyRef Name="id_servicio" />
-            </Principal>
-            <Dependent Role="servicios1">
-              <PropertyRef Name="id_servicio" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="hotel_servicios">
-          <End Role="hotel" Type="Self.hotel" Multiplicity="*" />
-          <End Role="servicios" Type="Self.servicios" Multiplicity="*" />
-        </Association>
-        <Association Name="reserva_servicios">
-          <End Role="reserva" Type="Self.reserva" Multiplicity="0..1" />
-          <End Role="servicios" Type="Self.servicios" Multiplicity="*" />
-        </Association>
         <EntityContainer Name="CLOSEANDSLOWEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="cliente" EntityType="Self.cliente" />
           <EntitySet Name="habitacion" EntityType="Self.habitacion" />
           <EntitySet Name="hotel" EntityType="Self.hotel" />
           <EntitySet Name="reserva" EntityType="Self.reserva" />
-          <EntitySet Name="servicios" EntityType="Self.servicios" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <AssociationSet Name="FK_reserva_cliente" Association="Self.FK_reserva_cliente">
             <End Role="cliente" EntitySet="cliente" />
@@ -420,19 +370,34 @@
             <End Role="hotel" EntitySet="hotel" />
             <End Role="reserva" EntitySet="reserva" />
           </AssociationSet>
-          <AssociationSet Name="FK_servicios_servicios" Association="Self.FK_servicios_servicios">
-            <End Role="servicios" EntitySet="servicios" />
-            <End Role="servicios1" EntitySet="servicios" />
-          </AssociationSet>
-          <AssociationSet Name="hotel_servicios" Association="Self.hotel_servicios">
+          <EntitySet Name="servicios" EntityType="CLOSEANDSLOWModel.servicios" />
+          <AssociationSet Name="hotel_servicios" Association="CLOSEANDSLOWModel.hotel_servicios">
             <End Role="hotel" EntitySet="hotel" />
             <End Role="servicios" EntitySet="servicios" />
           </AssociationSet>
-          <AssociationSet Name="reserva_servicios" Association="Self.reserva_servicios">
+          <AssociationSet Name="reserva_servicios" Association="CLOSEANDSLOWModel.reserva_servicios">
             <End Role="reserva" EntitySet="reserva" />
             <End Role="servicios" EntitySet="servicios" />
           </AssociationSet>
-        </EntityContainer>
+          </EntityContainer>
+        <EntityType Name="servicios">
+          <Key>
+            <PropertyRef Name="id_servicio" />
+          </Key>
+          <Property Name="id_servicio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre_servicio" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="precio" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
+          <NavigationProperty Name="hotel" Relationship="CLOSEANDSLOWModel.hotel_servicios" FromRole="servicios" ToRole="hotel" />
+          <NavigationProperty Name="reserva" Relationship="CLOSEANDSLOWModel.reserva_servicios" FromRole="servicios" ToRole="reserva" />
+        </EntityType>
+        <Association Name="hotel_servicios">
+          <End Type="CLOSEANDSLOWModel.hotel" Role="hotel" Multiplicity="*" />
+          <End Type="CLOSEANDSLOWModel.servicios" Role="servicios" Multiplicity="*" />
+        </Association>
+        <Association Name="reserva_servicios">
+          <End Type="CLOSEANDSLOWModel.reserva" Role="reserva" Multiplicity="0..1" />
+          <End Type="CLOSEANDSLOWModel.servicios" Role="servicios" Multiplicity="*" />
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -493,15 +458,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="servicios">
-            <EntityTypeMapping TypeName="CLOSEANDSLOWModel.servicios">
-              <MappingFragment StoreEntitySet="servicios">
-                <ScalarProperty Name="id_servicio" ColumnName="id_servicio" />
-                <ScalarProperty Name="nombre_servicio" ColumnName="nombre_servicio" />
-                <ScalarProperty Name="precio" ColumnName="precio" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
             <EntityTypeMapping TypeName="CLOSEANDSLOWModel.sysdiagrams">
               <MappingFragment StoreEntitySet="sysdiagrams">
@@ -513,23 +469,33 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="servicios">
+            <EntityTypeMapping TypeName="CLOSEANDSLOWModel.servicios">
+              <MappingFragment StoreEntitySet="servicios">
+                <ScalarProperty Name="precio" ColumnName="precio" />
+                <ScalarProperty Name="nombre_servicio" ColumnName="nombre_servicio" />
+                <ScalarProperty Name="id_servicio" ColumnName="id_servicio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <AssociationSetMapping Name="hotel_servicios" TypeName="CLOSEANDSLOWModel.hotel_servicios" StoreEntitySet="hotel_servicios">
+            <EndProperty Name="servicios">
+              <ScalarProperty Name="id_servicio" ColumnName="id_servicio" />
+            </EndProperty>
             <EndProperty Name="hotel">
               <ScalarProperty Name="id_hotel" ColumnName="id_hotel" />
             </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="reserva_servicios" TypeName="CLOSEANDSLOWModel.reserva_servicios" StoreEntitySet="reserva_servicios">
             <EndProperty Name="servicios">
               <ScalarProperty Name="id_servicio" ColumnName="id_servicio" />
             </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="reserva_servicios" TypeName="CLOSEANDSLOWModel.reserva_servicios" StoreEntitySet="reserva_servicios">
             <EndProperty Name="reserva">
               <ScalarProperty Name="id_reserva" ColumnName="id_reserva" />
             </EndProperty>
-            <EndProperty Name="servicios">
-              <ScalarProperty Name="id_servicio" ColumnName="id_servicio" />
-            </EndProperty>
+            <Condition ColumnName="id_reserva" IsNull="false" />
           </AssociationSetMapping>
-        </EntityContainerMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

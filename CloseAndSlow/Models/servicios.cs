@@ -24,8 +24,6 @@ namespace CloseAndSlow.Models
         public string nombre_servicio { get; set; }
         public decimal precio { get; set; }
     
-        public virtual servicios servicios1 { get; set; }
-        public virtual servicios servicios2 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<hotel> hotel { get; set; }
         public virtual reserva reserva { get; set; }

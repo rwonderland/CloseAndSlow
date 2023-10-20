@@ -29,7 +29,7 @@ namespace CloseAndSlow.Models
         public virtual DbSet<habitacion> habitacion { get; set; }
         public virtual DbSet<hotel> hotel { get; set; }
         public virtual DbSet<reserva> reserva { get; set; }
-        public virtual DbSet<servicios> servicios { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<servicios> servicios { get; set; }
     }
 }

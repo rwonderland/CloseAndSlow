@@ -25,19 +25,16 @@
                     <li>@Html.ActionLink("Nuestro proyecto", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
                     <li>@Html.ActionLink("Contacto", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Elige tu destino</a>
-                        <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Navegacion", "Contact", "Home", new { area = "" }, new { @class = "dropdown-item" })</li>
-                          
-                        </ul>
+                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                            Dropdown link
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Link 1</a>
+                            <a class="dropdown-item" href="#">Link 2</a>
+                            <a class="dropdown-item" href="#">Link 3</a>
+                        </div>
                     </li>
 
-
-                    @* <li><a class="dropdown-item" href="#">Link</a></li>
-        <li><a class="dropdown-item" href="#">Another link</a></li>
-        <li><a class="dropdown-item" href="#">A third link</a></li> *@
-
-                
                 </ul>
                
                 <ul class="navbar-nav pull-right">
