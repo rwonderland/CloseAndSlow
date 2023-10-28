@@ -20,7 +20,10 @@ namespace CloseAndSlow
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new Bundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js"));
+                 "~/ Scripts / popper.min.js",
+                "~/Scripts/boostrap.bundle.min.js"
+                 
+                     ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
