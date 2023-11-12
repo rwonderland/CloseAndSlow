@@ -1,0 +1,31 @@
+﻿
+.fondo-landing {
+    background-image:url("imagenes/fondos/fondo-main.jpg");
+    height:100vh;
+   
+    background-position:center;
+    background-repeat: no-repeat;
+    
+    background-size: cover;
+    margin:0px;
+}
+
+
+.barra-nav {
+    background-color: #0dcaf0;
+    height:10%;
+}
+.login{
+  
+  margin-left:100px;
+   
+}
+
+.fondo-destino {
+    background-image: url("imagenes/fondos/slow-suelo.jpg");
+    height: 140vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0px;
+}

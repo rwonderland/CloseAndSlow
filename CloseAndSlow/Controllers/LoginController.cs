@@ -1,4 +1,5 @@
 ﻿using CloseAndSlow.Models;
+using CloseAndSlow.Models.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,25 +15,23 @@ namespace CloseAndSlow.Controllers
         {
             return View();
         }
-
-        public ActionResult Acceso(string user, string password)
+        [HttpPost]
+        public ActionResult Acceso(ClienteViewModel user)
         {
             try{
                 //buscamos al usuario en la base de datos para ver si existe. Si existe creamos su sesión
                 using(CLOSEANDSLOWEntities db=new CLOSEANDSLOWEntities())
                 {
-                    var usuario= from d in db.cliente where d.usuario == user && d.contraseña == password 
-                                 select d;
-                    if(usuario.Count() > 0)
+                    var usuario= db.cliente.Where(d => d.usuario==user.Usuario).FirstOrDefault();
+                    if (usuario == null)
                     {
-                        //la almacenamos en una variable de tipo cliente(nuestra tabla)
-                        cliente cliente = usuario.First();
-                        Session["User"]= cliente;
-                        return Content("1");
+                        user.Error = "El usuario o la contraseña no son correctos";
+                        return View("IndexLogin",user);
                     }
                     else
                     {
-                        return Content( "El usuario o la contraseña no son correctos");
+                        Session["id_cliente"] = usuario.id_cliente;
+                        return RedirectToAction("UsuariosRegistrados","Login");
                     }
                 }
 
@@ -44,14 +43,20 @@ namespace CloseAndSlow.Controllers
             
         }
 
-        public ActionResult UsuariosRegistrados()
+        public ActionResult UsuariosRegistrados( )
         {
+            
             return View();
         }
 
 
 
+        public ActionResult Logout()
+        {
+            Session.Abandon();
 
+            return RedirectToAction("Index", "Home");
+        }
 
 
 

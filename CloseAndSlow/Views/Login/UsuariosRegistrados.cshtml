@@ -1,10 +1,20 @@
 ﻿
 @{
     ViewBag.Title = "UsuariosRegistrados";
-    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
-}
-<br /><br /><br />
+    Layout = null;
+    //si el usuario no tiene sesion lo devolvemos al index
+    if (Session["id_cliente"] == null)
+    {
+        Response.Redirect("~/Home/Index");
 
-<h2>Hola, Usuario</h2>
-<button type="button" class="btn btn-info float-end text-white">Cerrar sesión</button>
+    }
+}
+<br />
+<br />
+<br />
+
+<h2>Hola, @Session["id_cliente"]</h2>
+
+<a  class="text-decoration-none"href="@Url.Action("Logout","Login")">Cerrar sesión</a>
+
 

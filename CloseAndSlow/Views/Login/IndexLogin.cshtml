@@ -1,4 +1,6 @@
-﻿<br />
+﻿
+@model CloseAndSlow.Models.ViewModels.ClienteViewModel
+<br />
 <br />
 <br />
 
@@ -8,27 +10,59 @@
     Layout = "~/Views/Shared/_LayoutLogin.cshtml";
 
 }
+<div class="m-5 bg-light p-5 ms-2 rounded-pill ">
 
-<div class="m-4" style="padding-bottom:15%;">
-    <h2>ACCEDE A TU CUENTA</h2>
-    <form id="registro">
-        <div class="mb-3">
-            <label for="user" class="form-label">Usuario</label>
-            <input type="text" class="form-control" id="user" name="user" aria-describedby="nombreUsuario">
-        </div>
-        <div class="mb-3">
-            <label for="password" class="form-label">Contraseña</label>
-            <input type="password" class="form-control" id="password" name="password">
-        </div>
+    <div class="login col-sm-6">
 
-        <button type="submit" class="btn btn-primary">Incia sesión</button>
-        <p>Aún no tienes cuenta?</p>
-        <a class="nav-link text-decoration-underline" href="~/Views/Registro/Index.cshtml">Regístrate</a>
-    </form>
-</div>
+        <h2>ACCEDE A TU CUENTA</h2>
+        @*<form id="registro">
+                <div class="mb-3">
+                    <label for="user" class="form-label">Usuario</label>
+                    <input type="text" class="form-control" id="user" name="user" aria-describedby="nombreUsuario">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="password" name="password">
+                </div>
 
-@section scripts{
-    <script>
+                <button type="submit" class="btn btn-primary">Incia sesión</button>
+                <p class="my-2">Aún no tienes cuenta?</p>
+                <a id="registrate" class="nav-link text-decoration-underline" href="#">Regístrate</a>
+            </form>*@
+  
+        @using (Html.BeginForm("Acceso", "Login", FormMethod.Post, new { role = "form", @class = "" }))
+        {
+
+
+            <div>
+                @Html.LabelFor(d => d.Usuario)
+                @Html.TextBoxFor(d => d.Usuario, new { @class = "form-control" })
+                @Html.ValidationMessage("Usuario", new { @class = "text-danger" })
+            </div>
+            <div>
+                @Html.LabelFor(d => d.Contrasenha)
+                @Html.PasswordFor(d => d.Contrasenha, new { @class = "form-control" })
+                @Html.ValidationMessage("Contrasenha", new { @class = "text-danger" })
+
+            </div>
+            <div>
+                <label class="text-danger">@Html.DisplayFor(d => d.Error)</label>   
+                
+            </div>
+
+            <div>
+                <button type="submit" class="btn btn-info text-white mt-3 ml-5">Submit</button>
+
+            </div>
+        }
+    </div>
+    </div>
+
+  
+    
+    
+    @*@section scripts{
+                <script>
         $("#document").ready(function () {
 
             $("#registro").submit(function (e) {
@@ -38,22 +72,27 @@
                  var parametros = $(this).serialize();
 
                  $.post(url, parametros, function (respuesta) {
-                  if (respuesta == "1") {
+                  if (respuesta==1) {
                   document.location.href = "@Url.Content("~/Login/UsuariosRegistrados")";
-                   } else {
+                  } else {
+
                    alert(respuesta);
                   }
                  })
 
 
 
+            })
+
         })
 
-    })
+        $("#registrate").on("click", function () {
+            document.location.href = "@Url.Content("~/Registro/IndexRegistro")";
+        })
 
 
 
 
 
-    </script>
-}
+                </script>
+            }*@

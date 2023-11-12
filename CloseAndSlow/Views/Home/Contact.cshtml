@@ -1,19 +1,47 @@
 ﻿@{
     ViewBag.Title = "Hola!";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <main aria-labelledby="title">
-    @* no ajusrta bien el contenido con la fixed nav bar *@
+    @* no ajusta bien el contenido con la fixed nav bar *@
     <br />
     <br />
     <br />
-    <h2 id="title">@ViewBag.Title</h2>
-    <h3>@ViewBag.Message</h3>
 
-    <h5>Si tienes cualquier consulta envía nuestro formulario o escríbenos a nuestro correo electrónico.</h5>
-
-    <address>
-         
-         <a href="mailto:Support@example.com">closeandslow@example.com</a><br />
+    <div class="d-flex bg-info" >
+        <div class="flex-fill pt-2">
         
-    </address>
+            <img class="rounded-end-circle"src="~/Content/imagenes/fondos/caracolfavorita2.jpg" alt="caracol en tronco en la costa" />
+        </div>
+
+        <div class="align-self-center flex-fill">
+            <div class="m-5 bg-light p-5 ms-2 rounded-pill">
+                <div class="registro">
+                    <h2 id="title">@ViewBag.Title</h2>
+                    <h3>@ViewBag.Message</h3>
+
+                    <h5>Si tienes cualquier consulta envíanos este formulario o escríbenos a nuestro correo electrónico</h5>
+
+                    <address>
+
+                        <a class="" href="mailto:Support@example.com">closeandslow@example.com</a>
+
+                    </address>
+
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                    <button class="btn btn-info text-white pe-3" type="submit">Enviar</button>   
+
+                </div>
+
+            </div>
+        </div>
+
+        </div>
 </main>

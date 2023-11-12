@@ -1,18 +1,21 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="~/Content/misEstilos.css" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
-    
+
 
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-info fixed-top">
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark barra-nav fixed-top">
         <div class="container-fluid">
 
             @Html.ActionLink("Close and Slow", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
@@ -25,25 +28,25 @@
                     <li>@Html.ActionLink("Inicio", "Index", "Home", new { area = "" }, new { @class = "nav-link text-white" })</li>
                     <li>@Html.ActionLink("Nuestro proyecto", "About", "Home", new { area = "" }, new { @class = "nav-link text-white" })</li>
                     <li>@Html.ActionLink("Contacto", "Contact", "Home", new { area = "" }, new { @class = "nav-link text-white" })</li>
+                    <li>@Html.ActionLink("Elige tu destino", "IndexDestino", "Destino", new { area = "" }, new { @class = "nav-link text-white" })</li>
 
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbardrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                           Elige tu destino
-                        </a>
-                        <div class="dropdown-menu">
-                            @* Hacer función para cargar destinos dinámicamente desde una lista si da tiempo *@
-                            <a class="dropdown-item" href="#">Link 1</a>
+                    <!--<li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="navbardrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                       Elige tu destino
+                    </a>
+                    <div class="dropdown-menu">-->
+                    @* Hacer función para cargar destinos dinámicamente desde una lista si da tiempo *@
+                    <!--<a class="dropdown-item" href="#">Link 1</a>
                             <a class="dropdown-item" href="#">Link 2</a>
                             <a class="dropdown-item" href="#">Link 3</a>
                         </div>
-                    </li>
+                    </li>-->
 
                 </ul>
 
                 <ul class="navbar-nav pull-right">
                     <li>@Html.ActionLink("Inicia sesion", "IndexLogin", "Login", new { area = "" }, new { @class = "nav-link text-white" })</li>
-                    <li>@Html.ActionLink("Registrate", "IndexLogin", "Login", new { area = "" }, new { @class = "nav-link text-white" })</li>
+                    <li>@Html.ActionLink("Registrate", "IndexRegistro", "Registro", new { area = "" }, new { @class = "nav-link text-white", id = "registro" })</li>
                 </ul>
 
             </div>
@@ -51,14 +54,15 @@
         </div>
 
     </nav>
-    <
-    <div class="container-fluid">
+
+    <div class="m-0">
         @RenderBody()
-        <hr />
-        <footer>
-            aqui va el footer
-        </footer>
+
+
     </div>
+    <footer class="bg-info m-0">
+        aqui va el footer
+    </footer>
 
 
 
@@ -67,6 +71,7 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+
     @RenderSection("scripts", required: false)
 </body>
 </html>

@@ -130,6 +130,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DestinoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\RegistroController.cs" />
@@ -192,8 +193,14 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
-    <Content Include="Content\imagenes\caracol favorita.jpg" />
-    <Content Include="Content\imagenes\caracol favorita2.jpg" />
+    <Content Include="Content\imagenes\fondos\caracolfavorita2.jpg" />
+    <Content Include="Content\imagenes\fondos\fondo-main.jpg" />
+    <Content Include="Content\imagenes\fondos\slow-suelo.jpg" />
+    <Content Include="Content\imagenes\lugares\cabo-vilan.jpg" />
+    <Content Include="Content\imagenes\lugares\castro baroña 3.jpeg" />
+    <Content Include="Content\imagenes\lugares\loiba-banco.jpg" />
+    <Content Include="Content\imagenes\lugares\Monte-Louro.jpg" />
+    <Content Include="Content\misEstilos.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
@@ -368,7 +375,8 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Shared\_LayoutLogin.cshtml" />
     <Content Include="Views\Login\UsuariosRegistrados.cshtml" />
-    <Content Include="Views\Registro\Add.cshtml" />
+    <Content Include="Views\Registro\IndexRegistro.cshtml" />
+    <Content Include="Views\Destino\IndexDestino.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
