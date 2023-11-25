@@ -1,10 +1,12 @@
 ﻿@{
     ViewBag.Title = "Bienvenido a tu destino";
+
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<br />
-<br />
+
+
+
 
 
 
@@ -16,39 +18,39 @@
 
     </div>
     <div class="d-flex justify-content-md-evenly pt-5 ">
-        <div class="card" style="width: 18rem;">
+        <div class="card zoom" style="width: 18rem;">
             <img src="~/Content/imagenes/lugares/cabo-vilan.jpg" class="card-img-top" alt="">
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
+                <h5 class="card-title">Cabo Vilán</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <a href="@Url.Action("CaboVilan","Destino")" class="btn btn-primary">Descúbrelo</a>
             </div>
         </div>
 
-        <div class="card" style="width: 18rem;">
+        <div class="card zoom" style="width: 18rem;">
             <img src="~/Content/imagenes/lugares/Monte-Louro.jpg" class="card-img-top" alt="">
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
+                <h5 class="card-title">Monte Louro</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <a href="@Url.Action("MonteLouro","Destino")" class="btn btn-primary">Descúbrelo</a>
             </div>
         </div>
 
 
-        <div class="card" style="width: 18rem;">
+        <div class="card zoom" style="width: 18rem;">
             <img src="~/Content/imagenes/lugares/castro baroña 3.jpeg" class="card-img-top" alt="">
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
+                <h5 class="card-title">Castro de Baroña</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <a href="@Url.Action("CastroBaronha","Destino")" class="btn btn-primary">Descúbrelo</a>
             </div>
         </div>
-        <div class="card" style="width: 18rem;">
+        <div class="card zoom" style="width: 18rem;">
             <img src="~/Content/imagenes/lugares/loiba-banco.jpg" class="card-img-top" alt="">
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
+                <h5 class="card-title">Loiba</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <a href="@Url.Action("Loiba","Destino")" class="btn btn-primary">Descúbrelo</a>
             </div>
         </div>
 

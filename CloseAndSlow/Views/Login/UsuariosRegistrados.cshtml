@@ -1,20 +1,51 @@
 ﻿
 @{
-    ViewBag.Title = "UsuariosRegistrados";
-    Layout = null;
+    ViewBag.Title = "Ponte cómodo, estás en tu casa";
+    Layout = "~/Views/Shared/_LayoutRegistrados.cshtml"; ;
     //si el usuario no tiene sesion lo devolvemos al index
     if (Session["id_cliente"] == null)
     {
         Response.Redirect("~/Home/Index");
 
     }
+    Layout = "~/Views/Shared/_LayoutRegistrados.cshtml";
 }
-<br />
-<br />
-<br />
+<style>
+    .div-pers {
+        width: 17%;
+        height: 1000px;
+    }
 
-<h2>Hola, @Session["id_cliente"]</h2>
+    #registrados {
+        background-color: cornflowerblue;
+        color: white;
+    }
+</style>
 
-<a  class="text-decoration-none"href="@Url.Action("Logout","Login")">Cerrar sesión</a>
 
+<div class="d-flex mt-0">
+    <div id="registrados" class=" div-pers">
+        <div>Modificar mis datos personales</div>
+        <div>Mis reservas</div>
+        <div>Cancelar cuenta</div>
+
+
+    </div>
+    <div class="">
+        <h2>@ViewBag.Title</h2>
+        <i class="bi bi-cup-hot"></i>
+
+
+        <h4 class="">Hola, @Session["nombre"] </h4>
+        <h5>Que alegría volver a verte </h5>
+        @* Poner las opciones de modificar datos, listar reservas y modificar cuentas
+
+        *@
+
+    </div>
+    </div>
+
+    
+
+</div>
 

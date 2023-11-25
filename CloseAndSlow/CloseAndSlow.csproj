@@ -132,8 +132,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DestinoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HotelController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\RegistroController.cs" />
+    <Compile Include="Controllers\ReservaController.cs" />
     <Compile Include="Filters\CompruebaSesion.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -193,13 +195,22 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\imagenes\fondos\cabo-vilan-2.jpg" />
     <Content Include="Content\imagenes\fondos\caracolfavorita2.jpg" />
+    <Content Include="Content\imagenes\fondos\fondo-destinos.jpg" />
     <Content Include="Content\imagenes\fondos\fondo-main.jpg" />
     <Content Include="Content\imagenes\fondos\slow-suelo.jpg" />
+    <Content Include="Content\imagenes\hoteles\hotel_baronha.jpeg" />
+    <Content Include="Content\imagenes\hoteles\hotel_cabo_vilan.jpg" />
+    <Content Include="Content\imagenes\hoteles\hotel_loiba.jpeg" />
+    <Content Include="Content\imagenes\hoteles\hotel_louro.jpg" />
+    <Content Include="Content\imagenes\lugares\acantilados-Loiba.jpg" />
     <Content Include="Content\imagenes\lugares\cabo-vilan.jpg" />
     <Content Include="Content\imagenes\lugares\castro baroña 3.jpeg" />
     <Content Include="Content\imagenes\lugares\loiba-banco.jpg" />
+    <Content Include="Content\imagenes\lugares\monte-louro-c4.jpg" />
     <Content Include="Content\imagenes\lugares\Monte-Louro.jpg" />
+    <Content Include="Content\imagenes\lugares\Praia_de_Baronha.jpg" />
     <Content Include="Content\misEstilos.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
@@ -377,6 +388,13 @@
     <Content Include="Views\Login\UsuariosRegistrados.cshtml" />
     <Content Include="Views\Registro\IndexRegistro.cshtml" />
     <Content Include="Views\Destino\IndexDestino.cshtml" />
+    <Content Include="Views\Destino\CaboVilan.cshtml" />
+    <Content Include="Views\Destino\MonteLouro.cshtml" />
+    <Content Include="Views\Destino\CastroBaronha.cshtml" />
+    <Content Include="Views\Destino\Loiba.cshtml" />
+    <Content Include="Views\Shared\_LayoutRegistrados.cshtml" />
+    <Content Include="Views\Reserva\IndexReserva.cshtml" />
+    <Content Include="Views\Hotel\HotelVilan.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

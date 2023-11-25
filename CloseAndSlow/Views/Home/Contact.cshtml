@@ -1,47 +1,57 @@
 ﻿@{
     ViewBag.Title = "Hola!";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
 }
-<main aria-labelledby="title">
-    @* no ajusta bien el contenido con la fixed nav bar *@
-    <br />
-    <br />
-    <br />
+@*<div style="height:95px;"></div>*@
 
-    <div class="d-flex bg-info" >
-        <div class="flex-fill pt-2">
-        
-            <img class="rounded-end-circle"src="~/Content/imagenes/fondos/caracolfavorita2.jpg" alt="caracol en tronco en la costa" />
-        </div>
+@* no ajusta bien el contenido con la fixed nav bar *@
+<style>
 
-        <div class="align-self-center flex-fill">
-            <div class="m-5 bg-light p-5 ms-2 rounded-pill">
-                <div class="registro">
-                    <h2 id="title">@ViewBag.Title</h2>
-                    <h3>@ViewBag.Message</h3>
+    .div-pers {
+       margin-top:100px;
+       height:55%;
+       padding:2%;
+       
+    }
 
-                    <h5>Si tienes cualquier consulta envíanos este formulario o escríbenos a nuestro correo electrónico</h5>
+</style>
 
-                    <address>
+<div class="d-flex fondo-destinos vw-100 justify-content-center">
+    @* cambiar nombre a fondo form o algo asi  *@
 
-                        <a class="" href="mailto:Support@example.com">closeandslow@example.com</a>
 
-                    </address>
 
-                    <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                    </div>
-                    <button class="btn btn-info text-white pe-3" type="submit">Enviar</button>   
+    <div class="bg-light ms-2 justify-content-center div-pers ">
+        <div class="justify-content-center">
+            <h2 id="title">@ViewBag.Title</h2>
+            <h3>@ViewBag.Message</h3>
+
+            <h5>Si tienes cualquier consulta envíanos este formulario o escríbenos a nuestro correo electrónico</h5>
+
+            <address>
+
+                <a class="" href="mailto:Support@example.com">closeandslow@example.com</a>
+
+            </address>
+
+            <div class="mb-3">
+
+                <label for="exampleFormControlInput1" class="form-label">Correo electrónico</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Escribe tu comentario aquí</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
 
                 </div>
+                <button class="btn btn-info text-white pe-3" type="submit">Enviar</button>
+
+
 
             </div>
-        </div>
 
         </div>
-</main>
+    </div>
+
+</div>

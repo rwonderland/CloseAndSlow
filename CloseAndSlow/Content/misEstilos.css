@@ -11,15 +11,6 @@
 }
 
 
-.barra-nav {
-    background-color: #0dcaf0;
-    height:10%;
-}
-.login{
-  
-  margin-left:100px;
-   
-}
 
 .fondo-destino {
     background-image: url("imagenes/fondos/slow-suelo.jpg");
@@ -28,4 +19,40 @@
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0px;
+}
+
+
+.fondo-destinos {
+    background-image: url("imagenes/fondos/fondo-destinos.jpg");
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0px;
+}
+
+
+
+
+.zoom:hover{
+    transform:scale(1.2);
+}
+/*comprobar si hace falta */
+.barra-nav {
+    
+    background-color: #0dcaf0;
+    height: 10%;
+}
+
+.login {
+    margin-left: 100px;
+}
+
+
+.mar-top{
+   padding:200px;
+}
+
+.card-hotel{
+    margin-left:25%;
 }

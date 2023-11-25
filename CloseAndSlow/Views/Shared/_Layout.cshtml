@@ -1,31 +1,43 @@
-﻿<!DOCTYPE html>
+﻿
+<style>
+    .grad {
+        background-image: linear-gradient(to right, cornflowerblue,deepskyblue,darkturquoise,aqua);
+    }
+    .navbar {
+        
+    }
+
+</style>
+
+
+<!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="~/Content/misEstilos.css" />
+
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+
 
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
+    <link rel="stylesheet" href="~/Content/misEstilos.css" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
 
 
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark barra-nav fixed-top">
-        <div class="container-fluid">
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark  fixed-top fs-5 ">
+        <div class="container-fluid  ">
 
-            @Html.ActionLink("Close and Slow", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            @Html.ActionLink("Close and Slow", "Index", "Home", new { area = "" }, new { @class = "navbar-brand fs-3 " })
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Alternar navegación" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
                 <ul class="navbar-nav flex-grow-1">
-                    <li>@Html.ActionLink("Inicio", "Index", "Home", new { area = "" }, new { @class = "nav-link text-white" })</li>
+                    <li>@Html.ActionLink("Inicio", "Index", "Home", new { area = "" }, new { @class = "nav-link text-white " })</li>
                     <li>@Html.ActionLink("Nuestro proyecto", "About", "Home", new { area = "" }, new { @class = "nav-link text-white" })</li>
                     <li>@Html.ActionLink("Contacto", "Contact", "Home", new { area = "" }, new { @class = "nav-link text-white" })</li>
                     <li>@Html.ActionLink("Elige tu destino", "IndexDestino", "Destino", new { area = "" }, new { @class = "nav-link text-white" })</li>
@@ -45,8 +57,21 @@
                 </ul>
 
                 <ul class="navbar-nav pull-right">
-                    <li>@Html.ActionLink("Inicia sesion", "IndexLogin", "Login", new { area = "" }, new { @class = "nav-link text-white" })</li>
-                    <li>@Html.ActionLink("Registrate", "IndexRegistro", "Registro", new { area = "" }, new { @class = "nav-link text-white", id = "registro" })</li>
+                    @{
+                        if (Session["id_cliente"] != null && Session["id_cliente"].ToString() != "")
+                        {
+                            <li >@Html.ActionLink("" + Session["nombre"], "UsuariosRegistrados", "Login", new { area = "" }, new { @class = "nav-link text-white" })</li>
+                            
+                            <li> @Html.ActionLink("CerrarSesion" , "Logout", "Login", new { area = "" }, new { @class = "nav-link text-white" })</li>
+                        }
+                        else
+                        {
+                            <li>@Html.ActionLink("Inicia sesion", "IndexLogin", "Login", new { area = "" }, new { @class = "nav-link text-white" })</li>
+                            <li>@Html.ActionLink("Registrate", "IndexRegistro", "Registro", new { area = "" }, new { @class = "nav-link text-white", id = "registro" })</li>
+                        }
+
+
+                    }
                 </ul>
 
             </div>
@@ -58,11 +83,12 @@
     <div class="m-0">
         @RenderBody()
 
-
+        <footer class="grad h-25">
+            aqui va el footer
+        </footer>
     </div>
-    <footer class="bg-info m-0">
-        aqui va el footer
-    </footer>
+    
+   
 
 
 
@@ -76,7 +102,7 @@
 </body>
 </html>
 <script>
-   
+    
 
 
 

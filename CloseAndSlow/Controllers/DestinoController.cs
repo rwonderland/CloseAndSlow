@@ -13,5 +13,29 @@ namespace CloseAndSlow.Controllers
         {
             return View();
         }
+
+        public ActionResult CaboVilan() {
+            return View();
+        }
+
+
+        public ActionResult MonteLouro()
+        {
+            return View();
+        }
+
+        public ActionResult CastroBaronha()
+        {
+            return View();
+        }
+
+
+        public ActionResult Loiba()
+        {
+            return View();
+        }
+
+
+
     }
 }

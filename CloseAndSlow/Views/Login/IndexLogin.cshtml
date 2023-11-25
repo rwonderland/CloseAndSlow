@@ -1,8 +1,6 @@
 ﻿
 @model CloseAndSlow.Models.ViewModels.ClienteViewModel
-<br />
-<br />
-<br />
+
 
 @{
     ViewBag.Title = "Accede a tu cuenta";
@@ -10,26 +8,27 @@
     Layout = "~/Views/Shared/_LayoutLogin.cshtml";
 
 }
-<div class="m-5 bg-light p-5 ms-2 rounded-pill ">
 
-    <div class="login col-sm-6">
+<style>
 
+    .div-pers {
+        margin-top: 7%;
+        height: 50%;
+        width:35%;
+        margin-left:30%;
+        
+    }
+</style>
+
+
+<div class=" bg-light p-5  div-pers">
+    
+    <div class="w-75 ms-5">
         <h2>ACCEDE A TU CUENTA</h2>
-        @*<form id="registro">
-                <div class="mb-3">
-                    <label for="user" class="form-label">Usuario</label>
-                    <input type="text" class="form-control" id="user" name="user" aria-describedby="nombreUsuario">
-                </div>
-                <div class="mb-3">
-                    <label for="password" class="form-label">Contraseña</label>
-                    <input type="password" class="form-control" id="password" name="password">
-                </div>
 
-                <button type="submit" class="btn btn-primary">Incia sesión</button>
-                <p class="my-2">Aún no tienes cuenta?</p>
-                <a id="registrate" class="nav-link text-decoration-underline" href="#">Regístrate</a>
-            </form>*@
-  
+
+
+
         @using (Html.BeginForm("Acceso", "Login", FormMethod.Post, new { role = "form", @class = "" }))
         {
 
@@ -46,53 +45,20 @@
 
             </div>
             <div>
-                <label class="text-danger">@Html.DisplayFor(d => d.Error)</label>   
-                
+                <label class="text-danger">@Html.DisplayFor(d => d.Error)</label>
+
             </div>
 
             <div>
-                <button type="submit" class="btn btn-info text-white mt-3 ml-5">Submit</button>
+                <button type="submit" class="btn btn-info grad text-white mt-3 ml-5">Inicia sesión</button>
 
             </div>
+
+            <p class="my-2">Aún no tienes cuenta?</p>
+            <a id="registrate" class="nav-link text-decoration-underline" href="@Url.Action("IndexRegistro","Registro")">Regístrate</a>
         }
     </div>
-    </div>
-
-  
-    
-    
-    @*@section scripts{
-                <script>
-        $("#document").ready(function () {
-
-            $("#registro").submit(function (e) {
-                 e.preventDefault();
-
-                 var url = "@Url.Content("~/Login/Acceso")";
-                 var parametros = $(this).serialize();
-
-                 $.post(url, parametros, function (respuesta) {
-                  if (respuesta==1) {
-                  document.location.href = "@Url.Content("~/Login/UsuariosRegistrados")";
-                  } else {
-
-                   alert(respuesta);
-                  }
-                 })
+</div>
 
 
 
-            })
-
-        })
-
-        $("#registrate").on("click", function () {
-            document.location.href = "@Url.Content("~/Registro/IndexRegistro")";
-        })
-
-
-
-
-
-                </script>
-            }*@

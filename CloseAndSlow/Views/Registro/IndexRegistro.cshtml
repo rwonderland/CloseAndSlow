@@ -3,10 +3,19 @@
     ViewBag.Title = "Únete";
     Layout = "~/Views/Shared/_LayoutLogin.cshtml";
 }
+<style>
 
-<br /><br /><br /> 
-<div class="m-5 bg-light p-5 ms-4 rounded-pill  ">
-    <div class="   col-sm-7" >
+    .div-pers {
+        margin-top: 50px;
+        height: 75%;
+        padding: 2%;
+        width:40%;
+        margin-left:30%;
+        margin-top:5%;
+    }
+</style>
+<div class="bg-light  div-pers ">
+    <div class="col-sm-9">
         <h2>@ViewBag.Title</h2>
         @* Enviamos el formulario a través de un htmlHelper *@
         @using (Html.BeginForm("IndexRegistro", "Registro", FormMethod.Post, new { role = "form", @class = "" }))
@@ -61,7 +70,7 @@
                     @Html.PasswordFor(d => d.ConfirmaContrasenha, new { @class = "form-control" })
                 </div>
 
-                <button type="submit" class="btn btn-info mt-3 text-white">Enviar</button>
+                <button type="submit" class="btn btn-info grad mt-3 text-white">Enviar</button>
             </div>
 
         }

@@ -1,12 +1,31 @@
-﻿<br /><br />
-
+﻿
 @{
-    ViewBag.Title = "About";
+    ViewBag.Title = "Hola caracola";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<main aria-labelledby="title">
-    <h2 id="title">@ViewBag.Title.</h2>
-    <h3>@ViewBag.Message</h3>
-    <div id="presentación">
-        <p>Queremos presentarte el turismo "de aquí al lado"</p>
-    </div>
-</main>
+
+
+<style>
+    .grad {
+        background-image: linear-gradient(to right, cornflowerblue,deepskyblue,darkturquoise,aqua);
+    }
+    .padding-pers {
+        padding-top: 8%;
+    }
+</style>
+
+<div class="grad">
+
+
+@* esto va a ser una animacion  *@
+
+
+<div class="padding-pers text-white">
+    <h1>@ViewBag.Title</h1>
+</div>
+
+
+</div>
+<div id="presentación">
+    <p>Queremos presentarte el turismo "de aquí al lado"</p>
+</div>

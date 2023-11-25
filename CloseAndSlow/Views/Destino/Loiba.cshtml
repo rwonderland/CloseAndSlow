@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "Loiba";
+    if (Session["id_cliente"] != null)
+    { }
+}
+<style>
+
+    .grad {
+        background-image: linear-gradient(to right, cornflowerblue,deepskyblue,darkturquoise,aqua);
+    }
+
+    .padding-pers {
+        padding-top: 8%;
+    }
+</style>
+<div class="grad">
+
+
+    @* esto va a ser una animacion  *@
+
+
+    <div class="padding-pers text-white">
+        <h1>@ViewBag.Title</h1>
+    </div>
+
+
+</div>
+
+
+<div class=" my-5">
+    @* dos items flex , texto y foto *@
+    <img src="~/Content/imagenes/lugares/acantilados-Loiba.jpg" class="w-25 h-25" />
+</div>
+
+<div>
+    <h2>Elige tu alojamiento</h2>
+    <div class="card mb-3" style="width: 18rem;">
+        <img src="~/Content/imagenes/hoteles/hotel_loiba.jpeg" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Hotel  </h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary grad p-2">Reserva</a>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+

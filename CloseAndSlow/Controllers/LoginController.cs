@@ -31,6 +31,7 @@ namespace CloseAndSlow.Controllers
                     else
                     {
                         Session["id_cliente"] = usuario.id_cliente;
+                        Session["nombre"] = usuario.nombre;
                         return RedirectToAction("UsuariosRegistrados","Login");
                     }
                 }
