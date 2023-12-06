@@ -6,7 +6,12 @@
     .navbar {
         
     }
-
+    .iconos {
+        font-size: 35px;
+       color:white
+    }
+    
+    
 </style>
 
 
@@ -27,13 +32,13 @@
 
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark  fixed-top fs-5 ">
-        <div class="container-fluid  ">
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm grad  text-white fs-5 ">
+        <div class="container-fluid ">
 
-            @Html.ActionLink("Close and Slow", "Index", "Home", new { area = "" }, new { @class = "navbar-brand fs-3 " })
-            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Alternar navegación" aria-controls="navbarSupportedContent"
+            @Html.ActionLink("Close and Slow", "Index", "Home", new { area = "" }, new { @class = "navbar-brand fs-3 text-white " })
+            <button type="button" class="navbar-toggler  text-white " data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Alternar navegación" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon  "></span>
             </button>
             <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
                 <ul class="navbar-nav flex-grow-1">
@@ -80,11 +85,20 @@
 
     </nav>
 
-    <div class="m-0">
+    <div class="m-0 ">
         @RenderBody()
 
-        <footer class="grad h-25">
-            aqui va el footer
+        <footer class="grad h-25 iconos  mb-0 d-flex justify-content-around pt-5 ">
+            <a class="text-white" href="https://www.facebook.com"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+            
+            <a class="text-white" href="https://www.instagram.com"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+
+            <a class="text-white" href="mailto:Support@example.com"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+
+
+
+
+
         </footer>
     </div>
     

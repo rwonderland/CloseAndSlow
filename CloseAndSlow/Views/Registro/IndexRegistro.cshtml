@@ -1,21 +1,24 @@
 ﻿@model CloseAndSlow.Models.ViewModels.ClienteViewModel
 @{
     ViewBag.Title = "Únete";
-    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <style>
-
+/*controlar que solo se aplique esta clase en pantalla, no en movil */
     .div-pers {
-        margin-top: 50px;
-        height: 75%;
+       
+       
         padding: 2%;
-        width:40%;
-        margin-left:30%;
-        margin-top:5%;
+        width:40rem;
+      
+      
     }
+   .div-ext{
+      width:50rem;
+   }
 </style>
-<div class="bg-light  div-pers ">
-    <div class="col-sm-9">
+
+    <div class=" div-pers container-fluid ">
         <h2>@ViewBag.Title</h2>
         @* Enviamos el formulario a través de un htmlHelper *@
         @using (Html.BeginForm("IndexRegistro", "Registro", FormMethod.Post, new { role = "form", @class = "" }))
@@ -70,13 +73,13 @@
                     @Html.PasswordFor(d => d.ConfirmaContrasenha, new { @class = "form-control" })
                 </div>
 
-                <button type="submit" class="btn btn-info grad mt-3 text-white">Enviar</button>
+                <button type="submit" class="btn grad mt-3 text-white fw-bold ">Enviar</button>
             </div>
 
         }
 
     </div>
-</div>
+
 <script>
     function ManejaRespuesta(respuesta) {
 

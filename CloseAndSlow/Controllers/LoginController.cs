@@ -18,6 +18,7 @@ namespace CloseAndSlow.Controllers
         [HttpPost]
         public ActionResult Acceso(ClienteViewModel user)
         {
+            ViewBag.Error = "";
             try{
                 //buscamos al usuario en la base de datos para ver si existe. Si existe creamos su sesión
                 using(CLOSEANDSLOWEntities db=new CLOSEANDSLOWEntities())
@@ -25,8 +26,8 @@ namespace CloseAndSlow.Controllers
                     var usuario= db.cliente.Where(d => d.usuario==user.Usuario).FirstOrDefault();
                     if (usuario == null)
                     {
-                        user.Error = "El usuario o la contraseña no son correctos";
-                        return View("IndexLogin",user);
+                        ViewBag.Error = "El usuario o la contraseña no son correctos";
+                        return View("IndexLogin");
                     }
                     else
                     {

@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿using System.Drawing;
+using System.Web;
 using System.Web.Optimization;
 
 namespace CloseAndSlow
@@ -21,14 +22,24 @@ namespace CloseAndSlow
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new Bundle("~/bundles/bootstrap").Include(
-                 "~/ Scripts/popper.min.js",
+                 "~/Scripts/popper.min.js",
                 "~/Scripts/boostrap.bundle.min.js"
-                 
+
                      ));
+
+           
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/font-awesome.min.css",
+                       "~/Content/misEstilos.css",
                       "~/Content/site.css"));
+
+
+
+          
+
+
         }
     }
 }

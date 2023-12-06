@@ -1,7 +1,84 @@
-﻿
+﻿@*a las reservas solo pueden entrar usuarios registrados , redirigir a login con mensaje debes estar registrado para continuar ( en modal por ej) *@
+@model CloseAndSlow.Models.ViewModels.ReservaViewModel
+
 @{
-    ViewBag.Title = "IndexReserva";
+    ViewBag.Title = "Estás a un paso de tus vacaciones";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    //si no tiene sesion le redirigimos al login
+    if (Session["id_cliente"] == null)
+    {
+       Response.Redirect("~/Login/IndexLogin");
+
+    }
+
 }
-@*a las reservas solo pueden entrar usuarios registrados , redirigir a login con mensaje debes estar registrado para continuar ( en modal por ej) *@
-<h2>IndexReserva si has llegado aqui estás registrado </h2>
+<style>
+    .form-reserva {
+        background-image: url("../../Content/imagenes/fondos/reserva.jpg");
+        height: 140vh;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 0px;
+    }
+    .cuerpo-form{
+        color:orangered;
+       
+
+    }
+    .icono {
+        font-size: 25px;
+        color: deeppink;
+        height:3rem;
+        width:20rem;
+        
+    }
+</style>
+
+
+<div class="form-reserva">
+
+
+    @using (Html.BeginForm("CreateReserva", "Reserva", FormMethod.Post, new { role = "form", @class = "" }))
+
+    {
+        <div class="cuerpo-form container ">
+            <div class="pt-5">
+               <h3>Completa tu reserva en el hotel (nombre )</h3>
+
+            </div>
+            <div class="col-md-2 mb-3">
+                @Html.LabelFor(d => d.FechaDesde)
+                @Html.TextBoxFor(d => d.FechaDesde, new { @type = "date", @class = "form-control datepicker" })
+                @Html.ValidationMessage("FechaDesde", new { @class = "text-danger" })
+
+            </div>
+            <div class="col-md-2">
+                @Html.LabelFor(d => d.FechaHasta)
+                @Html.TextBoxFor(d => d.FechaHasta, new { @type = "date", @class = "form-control datepicker" })
+                @Html.ValidationMessage("FechaHasta", new { @class = "text-danger" })
+            </div>
+            <h5 class="mt-3">Disfuta en tu reserva sin coste adicional</h5>
+            <div class="icono d-flex justify-content-sm-around ">
+                <i class="fa fa-coffee" title="que no falte un buen café" aria-hidden="true"></i>
+                <i class="fa fa-bicycle" title="olvídate del coche" aria-hidden="true"></i>
+                <i class="fa fa-wifi" title="no sin mi wifi" aria-hidden="true"></i>
+               <i  title="todo nuestro amor"class="fa fa-heart" aria-hidden="true"></i>
+                
+                
+
+            </div>
+            
+
+
+            <input type="submit" class="btn grad text-white" value="Reserva" />
+
+
+        </div>
+
+
+    }
+
+</div>
+
 

@@ -5,60 +5,63 @@
 @{
     ViewBag.Title = "Accede a tu cuenta";
     //cargamos un Layout donde no tenemos opción de registro ni login
-    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 
 }
 
 <style>
 
     .div-pers {
+        /* controlar que solo aplique estos estilos en pantalla , no en movil */
         margin-top: 7%;
         height: 50%;
-        width:35%;
-        margin-left:30%;
-        
+        width: 23rem;
+    }
+
+    .div-exterior {
+        width: 40rem
     }
 </style>
 
 
-<div class=" bg-light p-5  div-pers">
-    
-    <div class="w-75 ms-5">
-        <h2>ACCEDE A TU CUENTA</h2>
+
+
+<div class="div-pers container-fluid ">
+    <h2>ACCEDE A TU CUENTA</h2>
 
 
 
 
-        @using (Html.BeginForm("Acceso", "Login", FormMethod.Post, new { role = "form", @class = "" }))
-        {
+    @using (Html.BeginForm("Acceso", "Login", FormMethod.Post, new { role = "form", @class = "" }))
+    {
+        @Html.AntiForgeryToken()
 
+        <div>
+            @Html.LabelFor(d => d.Usuario)
+            @Html.TextBoxFor(d => d.Usuario, new { @class = "form-control" })
+            @Html.ValidationMessage("Usuario", new { @class = "text-danger" })
+        </div>
+        <div>
+            @Html.LabelFor(d => d.Contrasenha)
+            @Html.PasswordFor(d => d.Contrasenha, new { @class = "form-control" })
+            @Html.ValidationMessage("Contrasenha", new { @class = "text-danger" })
 
-            <div>
-                @Html.LabelFor(d => d.Usuario)
-                @Html.TextBoxFor(d => d.Usuario, new { @class = "form-control" })
-                @Html.ValidationMessage("Usuario", new { @class = "text-danger" })
-            </div>
-            <div>
-                @Html.LabelFor(d => d.Contrasenha)
-                @Html.PasswordFor(d => d.Contrasenha, new { @class = "form-control" })
-                @Html.ValidationMessage("Contrasenha", new { @class = "text-danger" })
+        </div>
+        <div>
+            <label class="text-danger">@ViewBag.Error</label>
 
-            </div>
-            <div>
-                <label class="text-danger">@Html.DisplayFor(d => d.Error)</label>
+        </div>
 
-            </div>
+        <div>
+            <button type="submit" class="btn  grad text-white mt-3 ml-5 fw-bold ">Inicia sesión</button>
 
-            <div>
-                <button type="submit" class="btn btn-info grad text-white mt-3 ml-5">Inicia sesión</button>
+        </div>
 
-            </div>
-
-            <p class="my-2">Aún no tienes cuenta?</p>
-            <a id="registrate" class="nav-link text-decoration-underline" href="@Url.Action("IndexRegistro","Registro")">Regístrate</a>
-        }
-    </div>
+        <p class="my-2">Aún no tienes cuenta?</p>
+        <a id="registrate" class="nav-link text-decoration-underline" href="@Url.Action("IndexRegistro","Registro")">Regístrate</a>
+    }
 </div>
+
 
 
 

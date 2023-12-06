@@ -3,6 +3,7 @@
     ViewBag.Title = "Cabo Vilan";
     if (Session["id_cliente"] != null)
     { }
+    Layout = "~/Views/Shared/_LayoutRegistrados.cshtml";
 }
 <style>
 
@@ -20,17 +21,31 @@
     @* esto va a ser una animacion  *@
 
 
-    <div class="padding-pers text-white">
-        <h1>@ViewBag.Title</h1>
-    </div>
+
 
 
 </div>
 
 
-<div class=" my-5">
+<div class="m-3">
+    <h1>@ViewBag.Title</h1>
     @* dos items flex , texto y foto *@
-    <img src="~/Content/imagenes/fondos/cabo-vilan-2.jpg" class="w-25 h-25" />
+    <div class="card mb-4" style="max-width: 1350px;min-height:300px ">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="~/Content/imagenes/fondos/cabo-vilan-2.jpg" class="img-fluid" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This is a wider card with supporting text below as a natural lead-in to additional contentThis is a wider card with supporting text below as a natural lead-in to additional contentThis is a wider card with supporting text below as a natural lead-in to additional contentThis content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+
+                    <a href="https://turismocamarinas.net/que-hacer/faro-vilan/" target="_blank" class="btn grad text-white p-2">Saber más</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <div>
     <h2 class="login">Elige tu alojamiento</h2>
@@ -39,7 +54,7 @@
         <div class="card-body">
             <h5 class="card-title">Hotel  </h5>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary grad p-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Reserva mandalo a hotel vilan</a>
+            <a href="@Url.Action("HotelVilan","Hotel")" class="btn btn-primary grad p-2">Reserva mandalo a hotel vilan</a>
         </div>
     </div>
 
@@ -47,3 +62,6 @@
 </div>
 @* modal
     formulario que envia peticion para realizar reserva*@
+<script>
+
+</script>

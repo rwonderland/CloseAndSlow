@@ -22,15 +22,6 @@
 }
 
 
-.fondo-destinos {
-    background-image: url("imagenes/fondos/fondo-destinos.jpg");
-    height: 100vh;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin: 0px;
-}
-
 
 
 
@@ -56,3 +47,4 @@
 .card-hotel{
     margin-left:25%;
 }
+

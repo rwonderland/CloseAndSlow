@@ -24,9 +24,12 @@ namespace CloseAndSlow.Controllers
         }
 
         // GET: Reserva/Create
-        public ActionResult Create()
+        public ActionResult CreateReserva()
+
         {
-            return View();
+            return Content(" hemos recibido su reserva");
+            // busca el hotel, haz el insert en la bd y devuelve mensaje de error 
+            //return RedirectToAction("IndexReserva");
         }
 
         // POST: Reserva/Create

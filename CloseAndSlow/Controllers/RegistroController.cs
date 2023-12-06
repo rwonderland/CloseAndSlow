@@ -42,8 +42,13 @@ namespace CloseAndSlow.Controllers
                 nuevoCliente.nif = model.Nif;
                 nuevoCliente.telefono = model.Telefono;
                 nuevoCliente.num_tarjeta = model.Tarjeta;
+              
+                
+                nuevoCliente.usuario = model.Usuario;
                 nuevoCliente.mail = model.Email;
-                nuevoCliente.contraseña = model.Contrasenha;
+                //falta encriptar contraseña
+                nuevoCliente.contraseña= model.Contrasenha;
+                
                 db.cliente.Add(nuevoCliente);
                 db.SaveChanges();
                 //una vez creado el cliente le redirigimos a la página de login

@@ -1,7 +1,7 @@
 ﻿
 @{
     ViewBag.Title = "Bienvenido al hotel Cabo Vilán";
-    Layout = "~/Views/Shared/_LayoutRegistrados.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 
 }
 <style>
@@ -14,8 +14,8 @@
     .contenido {
         margin: 8%;
     }
-    .text-hotel {
-        color: #B2533E;
+    .div-hotel {
+       color:white;
         height:7rem;
         text-align:center;
        
@@ -23,122 +23,112 @@
 </style>
 
 
-<h2>@ViewBag.Title</h2>
-<div class="">
-    @* meter dos imágenes más de exteriores en un flex *@
-    <img src="~/Content/imagenes/hoteles/hotel_cabo_vilan.jpg" class="imag-hotel" alt="...">
+<div class="grad div-hotel">
+    <p class="pt-4 display-4 fw-bold">@ViewBag.Title</p>
+
+</div>
+<h2></h2>
+
+
+
+<div class="card m-5" style="max-width: 1350px;min-height:300px ">
+    <div class="row g-0">
+        <div class="col-md-4">
+            <img src="~/Content/imagenes/hoteles/hotel_cabo_vilan.jpg" class="img-fluid " alt="...">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This is a wider card with supporting text below as a natural lead-in to additional contentThis is a wider card with supporting text below as a natural lead-in to additional contentThis is a wider card with supporting text below as a natural lead-in to additional contentThis content is a little bit longer.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+    </div>
 </div>
 
-<div class="mt-5 bg-black text-hotel ">
-    <p class="pt-4 h2">HABITACIONES</p>
+<div class="mt-5 grad div-hotel">
+    <p class="pt-4 display-4 fw-bold"> NUESTRAS HABITACIONES</p>
 
 </div >
 
 <div class="contenido">
-    @* AQUI VAN LAS HABITACIONES CON FLEX *@
+    @* AQUI VAN LAS HABITACIONES C*@
 
-    <div class=" w-50 h-50">
-        <!-- Carousel -->
-        <div id="hab1" class="carousel slide" data-bs-ride="carousel">
-            <h5>Habitacion doble</h5>
-            <!-- Indicators/dots -->
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#hab1" data-bs-slide-to="0" class="active"></button>
-                <button type="button" data-bs-target="#hab1" data-bs-slide-to="1"></button>
-                <button type="button" data-bs-target="#hab1" data-bs-slide-to="2"></button>
-            </div>
-
-            <!-- The slideshow/carousel -->
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="~/Content/imagenes/hoteles/hotel_cabo_vilan.jpg" alt="Los Angeles" class="d-block  w-100">
+    <div class=" ">
+        <div class="card mb-4" style="max-width: 1350px;min-height:300px ">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="~/Content/imagenes/habitaciones/adultos1.jpg" class="img-fluid" alt="...">
                 </div>
-                <div class="carousel-item">
-                    <img src="~/Content/imagenes/hoteles/hotel_cabo_vilan.jpg" alt="Los Angeles" class="d-block  w-100">
-                </div>
-                <div class="carousel-item">
-                    <img src="~/Content/imagenes/hoteles/hotel_cabo_vilan.jpg" alt="Los Angeles" class="d-block  w-100">
-                </div>
-            </div>
-
-            <!-- Left and right controls/icons -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#hab1" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#hab1" data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </button>
-            <h5>Descripcion</h5>
-            <div>Describimos la habitacion</div>
-        </div>
-
-
-        <div id="hab2" class="carousel slide " data-bs-ride="carousel">
-            <h5>Habitacion familiar </h5>
-            <!-- Indicators/dots -->
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#hab2" data-bs-slide-to="0" class="active"></button>
-                <button type="button" data-bs-target="#hab2" data-bs-slide-to="1"></button>
-                <button type="button" data-bs-target="#hab2" data-bs-slide-to="2"></button>
-            </div>
-
-            <!-- The slideshow/carousel -->
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="~/Content/imagenes/hoteles/hotel_cabo_vilan.jpg" alt="Los Angeles" class="d-block   w-100">
-                </div>
-                <div class="carousel-item">
-                    <img src="~/Content/imagenes/hoteles/hotel_cabo_vilan.jpg" alt="Los Angeles" class="d-block   w-100">
-                </div>
-                <div class="carousel-item">
-                    <img src="~/Content/imagenes/hoteles/hotel_cabo_vilan.jpg" alt="Los Angeles" class="d-block  w-100">
-                </div>
-            </div>
-
-            <!-- Left and right controls/icons -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#hab2" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#hab2" data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </button>
-            <h5>Descripcion</h5>
-            <div>Describimos la habitacion</div>
-            @* aqui viene el boton que lanza el modal de la reserva, que será una partial class comun a todos los hoteles, se llevara en campo oculto el id del hotel(tiene que estar cargado previamente *@
-
-        </div>
-        <a href="#" class="btn btn-primary grad p-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Reserva</a>
-        @using (Ajax.BeginForm("IndexReserva", "Reserva", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "respuesta", OnSuccess = "handleResponseBooking", OnFailure = "handleFailure" }))
-        {
-            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="staticBackdropLabel">Indica los datos de tu reserva</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            @* calendario, num  *@
-
-
-
-
-                            ...
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-info" data-bs-dismiss="modal">Salir</button>
-                            <button type="submit" class="btn btn-info">Confirmar</button>
-                        </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This is a wider card with supporting text below as a natural lead-in to additional contentThis is a wider card with supporting text below as a natural lead-in to additional contentThis is a wider card with supporting text below as a natural lead-in to additional contentThis content is a little bit longer.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        <a href="@Url.Action("IndexReserva","Reserva")"  class="btn grad text-white p-2 fw-bold " >Reserva</a>
                     </div>
                 </div>
             </div>
-            <div id="respuesta"></div>
-            <div id="respuesta"></div>
-        }
+        </div>
+
+        @* habitacion con slider *@
+        <div class="card " style="max-width: 1350px;min-height:400px ">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <div id="hab2" class="carousel slide " data-bs-ride="carousel">
+
+                        <!-- Indicators/dots -->
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#hab2" data-bs-slide-to="0" class="active"></button>
+                            <button type="button" data-bs-target="#hab2" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#hab2" data-bs-slide-to="2"></button>
+                        </div>
+
+                        <!-- The slideshow/carousel -->
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="~/Content/imagenes/habitaciones/adultos2.jpg" alt="Los Angeles" class="d-block   w-100 " style="min-height:400px">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/Content/imagenes/habitaciones/infantil3.jpg" alt="Los Angeles" class="d-block   w-100" style="min-height:400px">
+                            </div>
+
+                        </div>
+
+                        <!-- Left and right controls/icons -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#hab2" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#hab2" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+
+                        @* aqui viene el boton que lanza el modal de la reserva, que será una partial class comun a todos los hoteles, se llevara en campo oculto el id del hotel(tiene que estar cargado previamente *@
+
+                    </div>
+
+                    @*/ <img src="~/Content/imagenes/habitaciones/adultos1.jpg" class="img-fluid" alt="...">*@
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This is a wider card with supporting text below as a natural lead-in to additional contentThis is a wider card with supporting text below as a natural lead-in to additional contentThis is a wider card with supporting text below as a natural lead-in to additional contentThis content is a little bit longer.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        <a href="" class="btn grad  text-white fw-bold  p-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Reserva</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @*  esto deberia ir en la vista index reserva para ser común a todos los hoteles. movido *@
+        
 
 
     </div>
-
+   
 </div>
 
+<script>
+ 
+</script>
 

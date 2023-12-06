@@ -19,9 +19,9 @@ namespace CloseAndSlow.Filters
         //    //si devuleve null no tiene sesión
         //    if (usuario == null)
         //    {
-        //        if (filterContext.Controller is LoginController == true)
+        //        if (filterContext.Controller is ReservaController == true)
         //        {
-        //            //si iba dirigido al filtro del login lo redirigimos 
+        //            //si iba dirigido al filtro de lo redirigimos 
         //            //ya veré a donde 
         //            filterContext.HttpContext.Response.Redirect("~/Login/IndexLogin");
         //        }

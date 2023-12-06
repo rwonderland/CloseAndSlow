@@ -9,21 +9,23 @@
 <style>
 
     .div-pers {
-       margin-top:100px;
-       height:55%;
-       padding:2%;
-       
+        margin-top: 4%;
+        height: 55%;
+        padding: 2%;
+        width: 40rem;   
+        margin-bottom:5rem;
     }
+
 
 </style>
 
-<div class="d-flex fondo-destinos vw-100 justify-content-center">
+
     @* cambiar nombre a fondo form o algo asi  *@
 
 
 
-    <div class="bg-light ms-2 justify-content-center div-pers ">
-        <div class="justify-content-center">
+    
+        <div class="div-pers container-fluid">
             <h2 id="title">@ViewBag.Title</h2>
             <h3>@ViewBag.Message</h3>
 
@@ -36,7 +38,7 @@
             </address>
 
             <div class="mb-3">
-
+                    
                 <label for="exampleFormControlInput1" class="form-label">Correo electrónico</label>
                 <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
 
@@ -45,13 +47,13 @@
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
 
                 </div>
-                <button class="btn btn-info text-white pe-3" type="submit">Enviar</button>
+                <button class="btn grad text-white pe-3 fw-bold " type="submit">Enviar</button>
 
 
 
             </div>
 
         </div>
-    </div>
+    
 
-</div>
+
