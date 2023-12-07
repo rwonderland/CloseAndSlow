@@ -1,7 +1,7 @@
-﻿
+﻿@model CloseAndSlow.Models.ViewModels.ClienteViewModel
 @{
     ViewBag.Title = "Ponte cómodo, estás en tu casa";
-    Layout = "~/Views/Shared/_LayoutRegistrados.cshtml"; ;
+    Layout = "~/Views/Shared/_Layout.cshtml"; ;
     //si el usuario no tiene sesion lo devolvemos al index
     if (Session["id_cliente"] == null)
     {
@@ -35,32 +35,74 @@
 
 
 
-<div class="grad text-white mb-5">
+<div class="grad text-white mb-5 text-md-center container-fluid">
     <h2>@ViewBag.Title</h2>
 
 </div>
-<div class="container-fluid">
+<div class="container-fluid text-md-center">
     <h4 class="">Hola, @Session["nombre"] </h4>
     <h5>Que alegría volver a verte. ¿Qué quieres hacer? </h5>
 </div>
-<div class=" d-flex justify-content-around registrados mt-5">
-    <div class=" ">
-        <i class="fa fa-pencil icono "></i>
-        <h5>Editar mis datos personales</h5>
+<div class=" d-flex justify-content-evenly registrados mt-5 container-fluid ">
+    <div>
+
+       <a href="~/Registro/Editar?id_cliente=@Session["id_cliente"] "><i id="edit" class="fa fa-pencil icono "></i></a> 
+        <h5>Editar mis datos</h5>
     </div>
-    <div class=" ">
+    <div id="read">
         <i class="fa fa-suitcase icono"></i>
         <h5>Ver mis reservas</h5>
     </div>
-    <div class=" ">
-        <i class="fa fa-trash-o icono  "></i>
+    <div id="delete">
+        <i class="fa fa-trash-o icono "></i>
         <h5>Eliminar mi cuenta</h5>
     </div>
+  <div id="edicion">
+    </div> 
 
 
 </div>
 <div class="sobre-footer"></div>
 
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let div = div = document.getElementById('edicion');
+      
+        document.getElementById("edit").addEventListener("click", function () {
+            alert("Vas a Editar");
+
+        })
+        document.getElementById("read").addEventListener("click", function () {
+            alert("Vas a Listar");
+
+        })
+
+
+
+        document.getElementById("delete").addEventListener("click", function () {
+            alert("Vas a borrar");
+
+        })
+
+
+
+
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
 
 
 

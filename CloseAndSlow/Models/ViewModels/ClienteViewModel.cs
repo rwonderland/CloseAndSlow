@@ -49,7 +49,7 @@ namespace CloseAndSlow.Models.ViewModels
         [Compare("Contrasenha",ErrorMessage = "Las contraseñas no son iguales")]
         public string ConfirmaContrasenha { get; set; }
 
-        //public string Error {  get; set; }
+        public int Id {  get; set; }    
 
     }
 }

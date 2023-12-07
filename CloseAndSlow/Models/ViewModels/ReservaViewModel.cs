@@ -13,11 +13,16 @@ namespace CloseAndSlow.Models.ViewModels
 
         [Required]
         [Display(Name = "Fecha de entrada")]
+        [DataType(DataType.Date)]
         public string FechaDesde { get; set; }
 
         [Required]
         [Display(Name = "Fecha de salida")]
+        [DataType(DataType.Date)]
         public string FechaHasta { get; set; }
+        public int IdCliente {  get; set; }
+        public int IdHotel {  get; set; }
+        public int IdHabitacion {  get; set; }
 
 
     }

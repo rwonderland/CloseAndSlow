@@ -42,9 +42,12 @@
     @using (Html.BeginForm("CreateReserva", "Reserva", FormMethod.Post, new { role = "form", @class = "" }))
 
     {
+        @Html.HiddenFor(d => d.IdCliente)
+        @Html.HiddenFor(d => d.IdHotel)
+        @Html.HiddenFor(d => d.IdHabitacion)
         <div class="cuerpo-form container ">
             <div class="pt-5">
-               <h3>Completa tu reserva en el hotel (nombre )</h3>
+                <h3>Completa tu reserva en el hotel @ViewBag.nombre_hotel</h3>
 
             </div>
             <div class="col-md-2 mb-3">
@@ -63,12 +66,12 @@
                 <i class="fa fa-coffee" title="que no falte un buen café" aria-hidden="true"></i>
                 <i class="fa fa-bicycle" title="olvídate del coche" aria-hidden="true"></i>
                 <i class="fa fa-wifi" title="no sin mi wifi" aria-hidden="true"></i>
-               <i  title="todo nuestro amor"class="fa fa-heart" aria-hidden="true"></i>
-                
-                
+                <i title="todo nuestro amor" class="fa fa-heart" aria-hidden="true"></i>
+
+
 
             </div>
-            
+
 
 
             <input type="submit" class="btn grad text-white" value="Reserva" />

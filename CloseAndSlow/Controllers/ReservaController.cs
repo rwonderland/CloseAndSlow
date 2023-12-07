@@ -1,95 +1,68 @@
-﻿using System;
+﻿using CloseAndSlow.Models;
+using CloseAndSlow.Models.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using System.Web.Services.Description;
-using System.Web.UI.WebControls.WebParts;
-using System.Web.UI.WebControls;
 
 namespace CloseAndSlow.Controllers
-{ //a las reservas solo pueden entrar usuarios registrados , redirigir a login con mensaje debes estar registrado para continuar(en modal por ej) 
+{
     public class ReservaController : Controller
     {
         // GET: Reserva
         public ActionResult IndexReserva()
-        {
-            return View();
-        }
-
-        // GET: Reserva/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        // GET: Reserva/Create
-        public ActionResult CreateReserva()
 
         {
-            return Content(" hemos recibido su reserva");
-            // busca el hotel, haz el insert en la bd y devuelve mensaje de error 
-            //return RedirectToAction("IndexReserva");
+            ReservaViewModel model = new ReservaViewModel();
+            //cambiar de viewBag a model
+            var id_cliente = Session["id_cliente"];
+            if (id_cliente != null)
+            {
+                model.IdCliente = int.Parse(id_cliente.ToString());
+                model.IdHotel = int.Parse(Request.Form["id_hotel"]);
+                model.IdHabitacion = int.Parse(Request.Form["id_habitacion"]);
+                ViewBag.nombre_hotel = Request.Form["nombre_hotel"];
+                return View(model);
+            }
+            else { return Redirect(Url.Content("~/Login/IndexLogin")); }
+          
+            
         }
 
-        // POST: Reserva/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        //recibe el modelo con los datos 
+        public ActionResult CreateReserva( ReservaViewModel model)
         {
-            try
+            if (!ModelState.IsValid)
             {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("IndexReserva");
+                return View(model);
             }
-            catch
+            //request del formulario de todos los datos necesarios e insert a la base de datos
+
+            using (var db = new CLOSEANDSLOWEntities())
             {
-                return View();
+                reserva nuevaReserva= new reserva();
+                nuevaReserva.fecha_reserva=DateTime.Now;
+                nuevaReserva.fecha_entrada = DateTime.Parse(model.FechaDesde);
+                nuevaReserva.fecha_salida = DateTime.Parse(model.FechaHasta);
+                nuevaReserva.anulada = false;
+                nuevaReserva.fecha_anulacion = DateTime.Parse("01-01-1900");
+                //numero de dias *precio noche
+                var dias = nuevaReserva.fecha_salida.Subtract(nuevaReserva.fecha_entrada);
+                var diff = dias.TotalDays;
+                var coste = diff * 50;
+                nuevaReserva.precio_total= int.Parse(coste.ToString());
+                nuevaReserva.id_cliente=model.IdCliente;
+                nuevaReserva.id_hotel= model.IdHotel;
+                nuevaReserva.id_habitacion = model.IdHabitacion;
+                db.reserva.Add(nuevaReserva);
+                db.SaveChanges();
+
+
             }
-        }
 
-        // GET: Reserva/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: Reserva/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("IndexReserva");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Reserva/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Reserva/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("IndexReserva");
-            }
-            catch
-            {
-                return View();
-            }
+            return Redirect(Url.Content("~/Login/UsuariosRegistrados"));
         }
     }
 }

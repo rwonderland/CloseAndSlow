@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CloseAndSlow.Models;
+using CloseAndSlow.Models.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -15,7 +17,10 @@ namespace CloseAndSlow.Controllers
         }
 
         public ActionResult CaboVilan() {
-            return View();
+            
+           
+
+                return View();
         }
 
 

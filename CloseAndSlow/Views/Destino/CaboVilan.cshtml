@@ -1,9 +1,9 @@
 ﻿
 @{
     ViewBag.Title = "Cabo Vilan";
-    if (Session["id_cliente"] != null)
-    { }
-    Layout = "~/Views/Shared/_LayoutRegistrados.cshtml";
+    
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <style>
 
@@ -15,20 +15,11 @@
         padding-top: 8%;
     }
 </style>
-<div class="grad">
-
-
-    @* esto va a ser una animacion  *@
 
 
 
-
-
-</div>
-
-
-<div class="m-3">
-    <h1>@ViewBag.Title</h1>
+<div class=" container-fluid mt-3 ">
+    <h1 class="text-center">@ViewBag.Title</h1>
     @* dos items flex , texto y foto *@
     <div class="card mb-4" style="max-width: 1350px;min-height:300px ">
         <div class="row g-0">
@@ -54,7 +45,7 @@
         <div class="card-body">
             <h5 class="card-title">Hotel  </h5>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="@Url.Action("HotelVilan","Hotel")" class="btn btn-primary grad p-2">Reserva mandalo a hotel vilan</a>
+            <a href="@Url.Action("HotelVilan","Hotel")" class="btn btn-primary grad p-2">Reserva</a>
         </div>
     </div>
 

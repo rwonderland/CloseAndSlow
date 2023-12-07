@@ -1,8 +1,10 @@
-﻿
+﻿@model CloseAndSlow.Models.ViewModels.HotelViewModel
+    @* aqui quiero recibir el id del hotel y el nombre *@
 @{
-    ViewBag.Title = "Bienvenido al hotel Cabo Vilán";
+    ViewBag.Title = "Bienvenido al hotel ";
     Layout = "~/Views/Shared/_Layout.cshtml";
-
+    ViewBag.id_habitacion1 = 1;
+    
 }
 <style>
     .imag-hotel {
@@ -24,10 +26,10 @@
 
 
 <div class="grad div-hotel">
-    <p class="pt-4 display-4 fw-bold">@ViewBag.Title</p>
-
+    <p class="pt-4 display-4 fw-bold">@ViewBag.Title @ViewBag.Nombre </p>
+    <p></p>
 </div>
-<h2></h2>
+
 
 
 
@@ -53,24 +55,31 @@
 
 <div class="contenido">
     @* AQUI VAN LAS HABITACIONES C*@
+    
 
     <div class=" ">
-        <div class="card mb-4" style="max-width: 1350px;min-height:300px ">
-            <div class="row g-0">
-                <div class="col-md-4">
-                    <img src="~/Content/imagenes/habitaciones/adultos1.jpg" class="img-fluid" alt="...">
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This is a wider card with supporting text below as a natural lead-in to additional contentThis is a wider card with supporting text below as a natural lead-in to additional contentThis is a wider card with supporting text below as a natural lead-in to additional contentThis content is a little bit longer.</p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        <a href="@Url.Action("IndexReserva","Reserva")"  class="btn grad text-white p-2 fw-bold " >Reserva</a>
+        @using (Html.BeginForm("IndexReserva", "Reserva", FormMethod.Post, new { role = "form", @class = "" }))
+        {
+            @Html.AntiForgeryToken()
+            <input type="hidden" id="id_hotel" name="id_hotel" value="@ViewBag.Id" />
+            <input type="hidden" id="nombre_hotel" name="nombre_hotel" value="@ViewBag.Nombre" />
+            <input type="hidden" id="id_habitacion" name="id_habitacion" value="1" />
+            <div class="card mb-4" style="max-width: 1350px;min-height:300px ">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="~/Content/imagenes/habitaciones/adultos1.jpg" class="img-fluid" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This is a wider card with supporting text below as a natural lead-in to additional contentThis is a wider card with supporting text below as a natural lead-in to additional contentThis is a wider card with supporting text below as a natural lead-in to additional contentThis content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            <input type="submit" class="btn grad text-white p-2 fw-bold " value="Reserva" />
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-
+        }
         @* habitacion con slider *@
         <div class="card " style="max-width: 1350px;min-height:400px ">
             <div class="row g-0">
@@ -121,14 +130,12 @@
         </div>
 
         @*  esto deberia ir en la vista index reserva para ser común a todos los hoteles. movido *@
-        
+
 
 
     </div>
    
 </div>
 
-<script>
- 
-</script>
+
 
