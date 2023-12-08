@@ -82,7 +82,6 @@ namespace CloseAndSlow.Controllers
                 model.Usuario = clienteActual.usuario;
                 model.Email = clienteActual.mail;
                 model.Id = clienteActual.id_cliente;
-                //falta encriptar contraseña
                 model.Contrasenha = clienteActual.contraseña;
                 return View(model);
             }
