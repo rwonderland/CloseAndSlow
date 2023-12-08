@@ -6,7 +6,9 @@ using System.Web;
 
 namespace CloseAndSlow.Models.ViewModels
 {
-    //Los viewModel solo muestran datos, la lógica se gestiona a través la propia clase, no desde el ViewModel
+    /// <summary>
+    /// Clase que  controla y valida los datos de las reservas
+    /// </summary>
     public class ReservaViewModel
 
     {
@@ -23,6 +25,8 @@ namespace CloseAndSlow.Models.ViewModels
         public int IdCliente {  get; set; }
         public int IdHotel {  get; set; }
         public int IdHabitacion {  get; set; }
+        public DateTime FechaReserva { get; set; }
+        public int Precio { get; set; } 
 
 
     }

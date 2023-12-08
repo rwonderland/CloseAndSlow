@@ -19,7 +19,9 @@ namespace CloseAndSlow.Controllers
             return View();
         }
 
-
+        /// <summary>
+        /// Método que crea un nuevo usuario y lo inserta en la base de datos 
+        /// </summary>
 
         [HttpPost]
         public ActionResult IndexRegistro(ClienteViewModel model)
@@ -30,14 +32,12 @@ namespace CloseAndSlow.Controllers
             {
                 return View(model);
             }
-            //  comprobamos que no exista nif ni mail, hacemos el insert y devolvemos mensaje usuario creado
-            //correctamente. En caso de error devolvemos mensaje correspondiente
+
 
             using (var db = new CLOSEANDSLOWEntities())
             {
 
                 cliente nuevoCliente = new cliente();
-                // if(db.cliente.Find(nuevoCliente.mail) != null)
                 nuevoCliente.nombre = model.Nombre;
                 nuevoCliente.direccion = model.Direccion;
                 nuevoCliente.nif = model.Nif;
@@ -47,24 +47,27 @@ namespace CloseAndSlow.Controllers
 
                 nuevoCliente.usuario = model.Usuario;
                 nuevoCliente.mail = model.Email;
-                //falta encriptar contraseña
-                nuevoCliente.contraseña = model.Contrasenha;
 
+                //var encriptada = model.Contrasenha;
+                //nuevoCliente.contraseña = Encrypt.GetSHA256(encriptada);
+                nuevoCliente.contraseña = model.Contrasenha;
                 db.cliente.Add(nuevoCliente);
                 db.SaveChanges();
                 //una vez creado el cliente le redirigimos a la página de login
 
-                    return Redirect(Url.Content("~/Login/IndexLogin"));
+                return Redirect(Url.Content("~/Login/IndexLogin"));
 
             }
-            
+
         }
 
-
+        /// <summary>
+        /// Método que carga los datos del usuario que vamos a editar en la vista 
+        /// </summary>
         [HttpGet]
         public ActionResult Editar(string id_cliente)
         {
-            
+
             ClienteViewModel model = new ClienteViewModel();
 
             using (var db = new CLOSEANDSLOWEntities())
@@ -84,41 +87,56 @@ namespace CloseAndSlow.Controllers
                 return View(model);
             }
         }
+
+        /// <summary>
+        /// Método que edita los datos de usuario y modifica el registro en la base de datos
+        /// </summary>
         [HttpPost]
         public ActionResult EditarDatos(ClienteViewModel model)
         {
-          
-            
-           using (var db = new CLOSEANDSLOWEntities())
+
+
+            using (var db = new CLOSEANDSLOWEntities())
             {
                 var clienteActual = db.cliente.Find(model.Id);
 
-                 clienteActual.nombre = model.Nombre  ;
-                 clienteActual.direccion = model.Direccion;
-                 clienteActual.nif = model.Nif;
-                 clienteActual.telefono = model.Telefono ;
-                 clienteActual.num_tarjeta = model.Tarjeta;
-                 clienteActual.usuario = model.Usuario ;
-                 clienteActual.mail = model.Email ;
-                 clienteActual.id_cliente = model.Id ;
-                
-                 
+                clienteActual.nombre = model.Nombre;
+                clienteActual.direccion = model.Direccion;
+                clienteActual.nif = model.Nif;
+                clienteActual.telefono = model.Telefono;
+                clienteActual.num_tarjeta = model.Tarjeta;
+                clienteActual.usuario = model.Usuario;
+                clienteActual.mail = model.Email;
+                clienteActual.id_cliente = model.Id;
+
+
 
                 db.Entry(clienteActual).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
 
-            
+
+            }
+            return Redirect(Url.Content("~/Login/UsuariosRegistrados"));
+
         }
-        return Redirect(Url.Content("~/Login/UsuariosRegistrados"));
-
-         }
 
 
 
+        /// <summary>
+        /// Método que elimina la cuenta de usuario
+        /// </summary>
+        public ActionResult Eliminar(string id_cliente)
 
-        public ActionResult Eliminar()
         {
-            return View();  
+            using (var db = new CLOSEANDSLOWEntities())
+            {
+                var clienteActual = db.cliente.Find(int.Parse(id_cliente));
+                db.cliente.Remove(clienteActual);
+                db.SaveChanges();
+            }
+            Session["id_cliente"] = null;
+
+            return Redirect(Url.Content("~/Home/Index"));
         }
     }
 }

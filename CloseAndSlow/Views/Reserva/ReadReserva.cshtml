@@ -1,0 +1,43 @@
+﻿@model List<CloseAndSlow.Models.ViewModels.ReservaViewModel>
+@{
+    ViewBag.Title = "Mis Reservas";
+   
+}
+
+
+<style>
+    .sobre-footer {
+        height: 40%;
+    }
+</style>
+<h2 class="mt-5 text-center">@ViewBag.Title</h2>
+<div class="container-fluid mt-4">
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th scope="col">Fecha de Reserva</th>
+                <th scope="col">Fecha de Llegada</th>
+                <th scope="col">Fecha de Salida</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var reservas in Model)
+            {
+                <tr>
+
+                    <td>@reservas.FechaReserva</td>
+                    <td>@reservas.FechaDesde</td>
+                    <td>@reservas.FechaHasta</td>
+
+                </tr>
+            }
+
+
+        </tbody>
+
+    </table>
+    <a href="@Url.Action("UsuariosRegistrados","Login")" class="btn grad mt-3 text-white fw-bold ">Volver</a>
+    <div class="sobre-footer"></div>
+</div>

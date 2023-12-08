@@ -15,6 +15,10 @@ namespace CloseAndSlow.Controllers
         {
             return View();
         }
+
+        /// <summary>
+        /// Método que busca al usuario en la base de datos y gestiona el acceso
+        /// </summary>
         [HttpPost]
         public ActionResult Acceso(ClienteViewModel user)
         {
@@ -59,13 +63,6 @@ namespace CloseAndSlow.Controllers
 
             return RedirectToAction("Index", "Home");
         }
-
-
-
-
-
-
-
 
 
     }

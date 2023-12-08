@@ -10,12 +10,14 @@ namespace CloseAndSlow.Controllers
 {
     public class ReservaController : Controller
     {
-        // GET: Reserva
+        /// <summary>
+        /// Método que recoge los datos del hotel y usuario para gestionar la reserva
+        /// </summary>
         public ActionResult IndexReserva()
 
         {
             ReservaViewModel model = new ReservaViewModel();
-            //cambiar de viewBag a model
+          
             var id_cliente = Session["id_cliente"];
             if (id_cliente != null)
             {
@@ -29,9 +31,11 @@ namespace CloseAndSlow.Controllers
           
             
         }
-
+        /// <summary>
+        /// Método que recibe el modelo con los datos necesarios para crear la reserva
+        /// </summary>
         [HttpPost]
-        //recibe el modelo con los datos 
+    
         public ActionResult CreateReserva( ReservaViewModel model)
         {
             if (!ModelState.IsValid)
@@ -62,7 +66,34 @@ namespace CloseAndSlow.Controllers
 
             }
 
-            return Redirect(Url.Content("~/Login/UsuariosRegistrados"));
+            return Redirect(Url.Content("~/Login/UsuariosRegistrados"));   
         }
+
+        public ActionResult ReadReserva( )
+        {
+            var id_cliente = int.Parse(Session["id_cliente"].ToString());
+           
+            List<ReservaViewModel> list;
+            using (CLOSEANDSLOWEntities db = new CLOSEANDSLOWEntities())
+            {
+                var precio = 
+                list = (from d in db.reserva
+                        where d.id_cliente==id_cliente
+                        select new ReservaViewModel 
+                        {
+                            FechaReserva = d.fecha_reserva,
+                            FechaDesde = d.fecha_entrada.ToString(),
+                            FechaHasta = d.fecha_salida.ToString(),
+                           
+            }).ToList();
+
+            }
+
+            return View(list);
+        }
+
+
+
     }
+
 }

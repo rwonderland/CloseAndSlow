@@ -1,4 +1,4 @@
-﻿@*a las reservas solo pueden entrar usuarios registrados , redirigir a login con mensaje debes estar registrado para continuar ( en modal por ej) *@
+﻿@*a las reservas solo pueden entrar usuarios registrados  *@
 @model CloseAndSlow.Models.ViewModels.ReservaViewModel
 
 @{
@@ -38,7 +38,6 @@
 
 <div class="form-reserva">
 
-
     @using (Html.BeginForm("CreateReserva", "Reserva", FormMethod.Post, new { role = "form", @class = "" }))
 
     {
@@ -67,20 +66,13 @@
                 <i class="fa fa-bicycle" title="olvídate del coche" aria-hidden="true"></i>
                 <i class="fa fa-wifi" title="no sin mi wifi" aria-hidden="true"></i>
                 <i title="todo nuestro amor" class="fa fa-heart" aria-hidden="true"></i>
-
-
-
             </div>
-
-
 
             <input type="submit" class="btn grad text-white" value="Reserva" />
 
-
         </div>
 
-
-    }
+     }
 
 </div>
 

@@ -139,7 +139,7 @@
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\RegistroController.cs" />
     <Compile Include="Controllers\ReservaController.cs" />
-    <Compile Include="Filters\CompruebaSesion.cs" />
+    <Compile Include="Encrypt1.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -453,7 +453,6 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\Shared\_LayoutLogin.cshtml" />
     <Content Include="Views\Login\UsuariosRegistrados.cshtml" />
     <Content Include="Views\Registro\IndexRegistro.cshtml" />
     <Content Include="Views\Destino\IndexDestino.cshtml" />
@@ -461,10 +460,10 @@
     <Content Include="Views\Destino\MonteLouro.cshtml" />
     <Content Include="Views\Destino\CastroBaronha.cshtml" />
     <Content Include="Views\Destino\Loiba.cshtml" />
-    <Content Include="Views\Shared\_LayoutRegistrados.cshtml" />
     <Content Include="Views\Reserva\IndexReserva.cshtml" />
     <Content Include="Views\Hotel\HotelVilan.cshtml" />
     <Content Include="Views\Registro\Editar.cshtml" />
+    <Content Include="Views\Reserva\ReadReserva.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

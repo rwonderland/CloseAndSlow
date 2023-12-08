@@ -5,13 +5,6 @@
 }
 
 
-
-
-
-
-
-@* Usamos dos div independientes para englobar todas las tarjetas y controlar el display *@
-
 <div class="fondo-destino h-25">
     <div class="d-flex justify-content-center">
         <h1 class="text-white display-1 mt-5">@ViewBag.Title</h1>
@@ -22,37 +15,38 @@
 
     <div class="d-flex justify-content-md-evenly py-5  ">
         <div class="card zoom " style="width: 18rem;">
-            <img src="~/Content/imagenes/lugares/cabo-vilan.jpg" class="card-img-top" alt="">
+            <img src="~/Content/imagenes/lugares/cabo-vilan.jpg" class="card-img-top" alt="Vistas Cabo Vilán">
             <div class="card-body">
                 <h5 class="card-title">Cabo Vilán</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p class="card-text">Espejito, espejito,¿quién es el faro más bonito?<br />
+              No te enfades, Torre de Hércules, hay sitio para todos</p>
                 <a href="@Url.Action("CaboVilan","Destino")" class="btn grad fw-bold text-white">Descúbrelo</a>
             </div>
         </div>
 
         <div class="card zoom" style="width: 18rem;">
-            <img src="~/Content/imagenes/lugares/Monte-Louro.jpg" class="card-img-top" alt="">
+            <img src="~/Content/imagenes/lugares/Monte-Louro.jpg" class="card-img-top" alt="Vistas Monte Louro">
             <div class="card-body">
                 <h5 class="card-title">Monte Louro</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p class="card-text">¿Es una isla australiana? Lo parece, pero es nuestro Monte Louro.<br />Y se puede llegar andando.</p>
                 <a href="@Url.Action("MonteLouro","Destino")" class="btn grad fw-bold text-white">Descúbrelo</a>
             </div>
         </div>
 
 
         <div class="card zoom" style="width: 18rem;">
-            <img src="~/Content/imagenes/lugares/castro baroña 3.jpeg" class="card-img-top" alt="">
+            <img src="~/Content/imagenes/lugares/castro baroña 3.jpeg" class="card-img-top" alt="Vistas Castro de Baroña">
             <div class="card-body">
                 <h5 class="card-title">Castro de Baroña</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p class="card-text">¿Un castro celta en una playa?<br />Esto no lo tenían en juego de tronos.</p>
                 <a href="@Url.Action("CastroBaronha","Destino")" class="btn grad fw-bold text-white">Descúbrelo</a>
             </div>
         </div>
         <div class="card zoom" style="width: 18rem;">
-            <img src="~/Content/imagenes/lugares/loiba-banco.jpg" class="card-img-top" alt="">
+            <img src="~/Content/imagenes/lugares/loiba-banco.jpg" class="card-img-top" alt="Vistas banco de Loiba">
             <div class="card-body">
                 <h5 class="card-title">Loiba</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p class="card-text">El banco más bonito del mundo. Si lo dice el National Geographic por algo será</p>
                 <a href="@Url.Action("Loiba","Destino")" class="btn  grad fw-bold text-white ">Descúbrelo</a>
             </div>
         </div>

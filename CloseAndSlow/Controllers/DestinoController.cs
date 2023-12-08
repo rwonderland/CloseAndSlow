@@ -10,7 +10,7 @@ namespace CloseAndSlow.Controllers
 {
     public class DestinoController : Controller
     {
-        // GET: Destino
+        
         public ActionResult IndexDestino()
         {
             return View();

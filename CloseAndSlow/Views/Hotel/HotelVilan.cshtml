@@ -36,7 +36,7 @@
 <div class="card m-5" style="max-width: 1350px;min-height:300px ">
     <div class="row g-0">
         <div class="col-md-4">
-            <img src="~/Content/imagenes/hoteles/hotel_cabo_vilan.jpg" class="img-fluid " alt="...">
+            <img src="~/Content/imagenes/hoteles/hotel_cabo_vilan.jpg" class="img-fluid " alt="Hotel Cabo vilán, fachada">
         </div>
         <div class="col-md-8">
             <div class="card-body">
@@ -54,8 +54,6 @@
 </div >
 
 <div class="contenido">
-    @* AQUI VAN LAS HABITACIONES C*@
-    
 
     <div class=" ">
         @using (Html.BeginForm("IndexReserva", "Reserva", FormMethod.Post, new { role = "form", @class = "" }))
@@ -67,13 +65,13 @@
             <div class="card mb-4" style="max-width: 1350px;min-height:300px ">
                 <div class="row g-0">
                     <div class="col-md-4">
-                        <img src="~/Content/imagenes/habitaciones/adultos1.jpg" class="img-fluid" alt="...">
+                        <img src="~/Content/imagenes/habitaciones/adultos1.jpg" class="img-fluid" alt="Habitación doble">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
+                            <h5 class="card-title">Habitación doble</h5>
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This is a wider card with supporting text below as a natural lead-in to additional contentThis is a wider card with supporting text below as a natural lead-in to additional contentThis is a wider card with supporting text below as a natural lead-in to additional contentThis content is a little bit longer.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                           
                             <input type="submit" class="btn grad text-white p-2 fw-bold " value="Reserva" />
                         </div>
                     </div>
@@ -96,10 +94,10 @@
                         <!-- The slideshow/carousel -->
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="~/Content/imagenes/habitaciones/adultos2.jpg" alt="Los Angeles" class="d-block   w-100 " style="min-height:400px">
+                                <img src="~/Content/imagenes/habitaciones/adultos2.jpg" alt="Habitación familiar adultos" class="d-block   w-100 " style="min-height:400px">
                             </div>
                             <div class="carousel-item">
-                                <img src="~/Content/imagenes/habitaciones/infantil3.jpg" alt="Los Angeles" class="d-block   w-100" style="min-height:400px">
+                                <img src="~/Content/imagenes/habitaciones/infantil3.jpg" alt="Habitación familiar niños" class="d-block   w-100" style="min-height:400px">
                             </div>
 
                         </div>
@@ -112,25 +110,20 @@
                             <span class="carousel-control-next-icon"></span>
                         </button>
 
-                        @* aqui viene el boton que lanza el modal de la reserva, que será una partial class comun a todos los hoteles, se llevara en campo oculto el id del hotel(tiene que estar cargado previamente *@
-
                     </div>
 
                     @*/ <img src="~/Content/imagenes/habitaciones/adultos1.jpg" class="img-fluid" alt="...">*@
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title">Habitación familiar</h5>
                         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This is a wider card with supporting text below as a natural lead-in to additional contentThis is a wider card with supporting text below as a natural lead-in to additional contentThis is a wider card with supporting text below as a natural lead-in to additional contentThis content is a little bit longer.</p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                      
                         <a href="" class="btn grad  text-white fw-bold  p-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Reserva</a>
                     </div>
                 </div>
             </div>
         </div>
-
-        @*  esto deberia ir en la vista index reserva para ser común a todos los hoteles. movido *@
-
 
 
     </div>

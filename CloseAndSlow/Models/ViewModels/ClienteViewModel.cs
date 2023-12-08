@@ -6,6 +6,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace CloseAndSlow.Models.ViewModels
 {
+    /// <summary>
+    /// Clase que controla y valida los datos de usuario
+    /// </summary>
     public class ClienteViewModel
     {
         [Required]

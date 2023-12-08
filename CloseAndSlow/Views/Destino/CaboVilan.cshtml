@@ -1,58 +1,51 @@
 ﻿
 @{
     ViewBag.Title = "Cabo Vilan";
-    
+
 
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<style>
 
-    .grad {
-        background-image: linear-gradient(to right, cornflowerblue,deepskyblue,darkturquoise,aqua);
-    }
 
-    .padding-pers {
-        padding-top: 8%;
-    }
-</style>
-
+<div class="grad text-white ps-2 text-center">
+    <h1>@ViewBag.Title</h1>
+</div>
 
 
 <div class=" container-fluid mt-3 ">
-    <h1 class="text-center">@ViewBag.Title</h1>
-    @* dos items flex , texto y foto *@
+
     <div class="card mb-4" style="max-width: 1350px;min-height:300px ">
         <div class="row g-0">
             <div class="col-md-4">
-                <img src="~/Content/imagenes/fondos/cabo-vilan-2.jpg" class="img-fluid" alt="...">
+                <img src="~/Content/imagenes/fondos/cabo-vilan-2.jpg" class="img-fluid" alt="Vistas al Cabo Vilán">
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This is a wider card with supporting text below as a natural lead-in to additional contentThis is a wider card with supporting text below as a natural lead-in to additional contentThis is a wider card with supporting text below as a natural lead-in to additional contentThis content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <h5 class="card-title">Cabo Vilán </h5>
+                    <p class="card-text">É quizais un xigante poideroso que ollándonos está, cun ollo refulxente que alumía na azul inmensidá.
+                        Ben o vexo, antre a brétoma, alá lonxe,brilante lostregar; eu ben vexo antre a brétoma o seu ollo constante parpadear.<br />
+                        É un cíclope soberbo que alumía aos que pola auga van, é un cíclope soberbo que lostrega no monte do Vilán.<br />
+                        GONZALO LÓPEZ ABENTE (De Escumas da ribeira,1911)
+                    </p>
+                    
 
                     <a href="https://turismocamarinas.net/que-hacer/faro-vilan/" target="_blank" class="btn grad text-white p-2">Saber más</a>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<div>
-    <h2 class="login">Elige tu alojamiento</h2>
-    <div class="card mb-3 login " style="width: 18rem;">
-        <img src="~/Content/imagenes/hoteles/hotel_cabo_vilan.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Hotel  </h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="@Url.Action("HotelVilan","Hotel")" class="btn btn-primary grad p-2">Reserva</a>
+
+    <div>
+        <h2 class="">Elige tu alojamiento</h2>
+        <div class="card mb-3  " style="width: 18rem;">
+            <img src="~/Content/imagenes/hoteles/hotel_cabo_vilan.jpg" class="card-img-top" alt="Hotel Cabo Vilan, fachada">
+            <div class="card-body">
+                <h5 class="card-title">Hotel Cabo Vilán  </h5>
+                <p class="card-text">Un idílico hotel rural donde podrás desconectar en plena naturaleza</p>
+                <a href="@Url.Action("HotelVilan","Hotel")" class="btn btn-primary grad p-2">Reserva</a>
+            </div>
         </div>
+
+
     </div>
-
-
 </div>
-@* modal
-    formulario que envia peticion para realizar reserva*@
-<script>
-
-</script>

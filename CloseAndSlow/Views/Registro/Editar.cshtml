@@ -18,57 +18,57 @@
 
 <div class=" div-pers container-fluid ">
     <h2>@ViewBag.Title</h2>
-    @* Enviamos el formulario a través de un htmlHelper *@
+   
     @using (Html.BeginForm("EditarDatos", "Registro", FormMethod.Post, new { role = "form", @class = "" }))
     { 
        @Html.HiddenFor(d=>d.Id)
-<div class="">
+       <div class="">
 
-    @Html.AntiForgeryToken()
+          @Html.AntiForgeryToken()
 
-    @Html.ValidationMessage("error", new { @class = "text-danger" })
-    @*Utilizamos expresiones lambda para recuperar los campos de nuestro modelo *@
-    <div>
-        @Html.LabelFor(d => d.Nombre)
-        @Html.TextBoxFor(d => d.Nombre, new { @class = "form-control" })
-        @Html.ValidationMessage("Nombre", new { @class = "text-danger" })
-    </div>
-    <div>
-        @Html.LabelFor(d => d.Direccion)
-        @Html.TextBoxFor(d => d.Direccion, new { @class = "form-control" })
-        @Html.ValidationMessage("Direccion", new { @class = "text-danger" })
-    </div>
-    <div>
-        @Html.LabelFor(d => d.Nif)
-        @Html.TextBoxFor(d => d.Nif, new { @class = "form-control" })
-        @Html.ValidationMessage("Nif", new { @class = "text-danger" })
-    </div>
-    <div>
-        @Html.LabelFor(d => d.Telefono)
-        @Html.TextBoxFor(d => d.Telefono, new { @class = "form-control" })
-        @Html.ValidationMessage("Telefono", new { @class = "text-danger" })
-    </div>
-    <div>
-        @Html.LabelFor(d => d.Tarjeta)
-        @Html.TextBoxFor(d => d.Tarjeta, new { @class = "form-control" })
-    </div>
-    <div>
-        @Html.LabelFor(d => d.Usuario)
-        @Html.TextBoxFor(d => d.Usuario, new { @class = "form-control" })
-        @Html.ValidationMessage("Usuario", new { @class = "text-danger" })
-    </div>
-    <div>
-        @Html.LabelFor(d => d.Email)
-        @Html.TextBoxFor(d => d.Email, new { @class = "form-control" })
-        @Html.ValidationMessage("Email", new { @class = "text-danger" })
-    </div>
+           @Html.ValidationMessage("error", new { @class = "text-danger" })
+           @*Utilizamos expresiones lambda para recuperar los campos de nuestro modelo *@
+          <div>
+            @Html.LabelFor(d => d.Nombre)
+            @Html.TextBoxFor(d => d.Nombre, new { @class = "form-control" })
+            @Html.ValidationMessage("Nombre", new { @class = "text-danger" })
+         </div>
+         <div>
+            @Html.LabelFor(d => d.Direccion)
+            @Html.TextBoxFor(d => d.Direccion, new { @class = "form-control" })
+            @Html.ValidationMessage("Direccion", new { @class = "text-danger" })
+         </div>
+         <div>
+            @Html.LabelFor(d => d.Nif)
+            @Html.TextBoxFor(d => d.Nif, new { @class = "form-control" })
+            @Html.ValidationMessage("Nif", new { @class = "text-danger" })
+         </div>
+         <div>
+            @Html.LabelFor(d => d.Telefono)
+            @Html.TextBoxFor(d => d.Telefono, new { @class = "form-control" })
+            @Html.ValidationMessage("Telefono", new { @class = "text-danger" })
+         </div>
+         <div>
+            @Html.LabelFor(d => d.Tarjeta)
+            @Html.TextBoxFor(d => d.Tarjeta, new { @class = "form-control" })
+         </div>
+         <div>
+            @Html.LabelFor(d => d.Usuario)
+            @Html.TextBoxFor(d => d.Usuario, new { @class = "form-control" })
+            @Html.ValidationMessage("Usuario", new { @class = "text-danger" })
+         </div>
+         <div>
+            @Html.LabelFor(d => d.Email)
+            @Html.TextBoxFor(d => d.Email, new { @class = "form-control" })
+            @Html.ValidationMessage("Email", new { @class = "text-danger" })
+         </div>
     
-    <button type="submit" class="btn grad mt-3 text-white fw-bold ">Enviar</button>
-    <a href="@Url.Action("UsuariosRegistrados","Login")"class="btn grad mt-3 text-white fw-bold ">Volver</a>
-</div>
+         <button type="submit" class="btn grad mt-3 text-white fw-bold ">Enviar</button>
+         <a href="@Url.Action("UsuariosRegistrados","Login")"class="btn grad mt-3 text-white fw-bold ">Volver</a>
+       </div>
 
-    }
-
+   
+       }
 </div>
 
 

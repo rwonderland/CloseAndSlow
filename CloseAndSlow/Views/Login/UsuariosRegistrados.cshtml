@@ -33,8 +33,6 @@
     }
 </style>
 
-
-
 <div class="grad text-white mb-5 text-md-center container-fluid">
     <h2>@ViewBag.Title</h2>
 
@@ -50,11 +48,12 @@
         <h5>Editar mis datos</h5>
     </div>
     <div id="read">
-        <i class="fa fa-suitcase icono"></i>
+        <a href="~/Reserva/ReadReserva"><i class="fa fa-suitcase icono"></i></a>
+        
         <h5>Ver mis reservas</h5>
     </div>
     <div id="delete">
-        <i class="fa fa-trash-o icono "></i>
+        <a href="~/Registro/Eliminar?id_cliente=@Session["id_cliente"] "><i class="fa fa-trash-o icono "></i></i></a>
         <h5>Eliminar mi cuenta</h5>
     </div>
   <div id="edicion">
@@ -65,44 +64,6 @@
 <div class="sobre-footer"></div>
 
 
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        let div = div = document.getElementById('edicion');
-      
-        document.getElementById("edit").addEventListener("click", function () {
-            alert("Vas a Editar");
-
-        })
-        document.getElementById("read").addEventListener("click", function () {
-            alert("Vas a Listar");
-
-        })
-
-
-
-        document.getElementById("delete").addEventListener("click", function () {
-            alert("Vas a borrar");
-
-        })
-
-
-
-
-    })
-
-
-
-
-
-
-
-
-
-
-
-
-
-</script>
 
 
 
